@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Pipeline Observability Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="app-header">
+      <div>
+        <h1>Data Pipeline &amp; Observability Dashboard</h1>
+        <p>So sánh retrieval/answer quality và data quality/freshness giữa baseline, corrupted và repaired.</p>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" type="button">Dark mode</button>
+    </div>
+
+    <div id="banner" class="banner"></div>
+
+    <section class="card">
+      <h2>Kiểm tra một bản ghi</h2>
+      <p class="card-subtitle">Nhập thử một record + bối cảnh batch, sau đó bấm "Kiểm tra" ở từng ô lỗi bên dưới — mỗi ô chạy độc lập đúng logic tương ứng trong <code>src/observability/quality.py</code>.</p>
+
+      <form id="record-form" class="record-form" autocomplete="off">
+        <div class="record-form-row">
+          <label for="rf-paper-id">paper_id</label>
+          <input id="rf-paper-id" name="paper_id" type="text" placeholder="10.1000/xyz123" />
+        </div>
+        <div class="record-form-row">
+          <label for="rf-title">title</label>
+          <input id="rf-title" name="title" type="text" placeholder="Tiêu đề bài báo" />
+        </div>
+        <div class="record-form-row">
+          <label for="rf-summary">summary</label>
+          <textarea id="rf-summary" name="summary" rows="3" placeholder="Tóm tắt / abstract"></textarea>
+        </div>
+        <div class="record-form-row">
+          <label for="rf-published">published</label>
+          <input id="rf-published" name="published" type="date" />
+        </div>
+        <div class="record-form-row">
+          <label for="rf-row-count">row_count</label>
+          <input id="rf-row-count" name="row_count" type="number" min="0" step="1" value="24" />
+        </div>
+        <div class="record-form-row">
+          <label for="rf-dup-count">duplicate_count</label>
+          <input id="rf-dup-count" name="duplicate_count" type="number" min="1" step="1" value="1" />
+        </div>
+        <p class="form-hint">
+          <code>row_count</code>/<code>duplicate_count</code> mô phỏng bối cảnh cả batch (Volume, Uniqueness cần nhiều bản ghi mới đánh giá được, không suy ra từ 1 record).
+        </p>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="rf-fill-good">Điền mẫu hợp lệ</button>
+          <button type="button" class="btn btn-secondary" id="rf-fill-bad">Điền mẫu lỗi</button>
+          <button type="button" class="btn btn-ghost" id="rf-clear">Xóa</button>
+        </div>
+      </form>
+
+      <div id="dimension-grid" class="dimension-grid"></div>
+    </section>
+
+    <section class="card">
+      <h2>Retrieval &amp; answer quality (thang 0–1)</h2>
+      <p class="card-subtitle">retrieval_hit_rate · mean_token_f1 · judge_accuracy</p>
+      <div id="chart-fractional" class="chart-wrap"></div>
+      <details class="table-toggle">
+        <summary>Xem bảng dữ liệu</summary>
+        <div id="table-fractional"></div>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Mean judge score (thang 1–5)</h2>
+      <p class="card-subtitle">Điểm trung bình LLM-judge chấm cho câu trả lời agent</p>
+      <div id="chart-judge" class="chart-wrap"></div>
+      <details class="table-toggle">
+        <summary>Xem bảng dữ liệu</summary>
+        <div id="table-judge"></div>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Data quality checks</h2>
+      <p class="card-subtitle">Kết quả <code>run_data_quality_checks</code> theo từng trạng thái</p>
+      <div id="quality-grid" class="state-grid"></div>
+    </section>
+
+    <section class="card">
+      <h2>Freshness</h2>
+      <p class="card-subtitle">Kết quả <code>build_freshness_report</code> theo từng trạng thái</p>
+      <div id="freshness-grid" class="state-grid"></div>
+    </section>
+
+    <footer class="app-footer">
+      Nguồn dữ liệu: <code>data/results/*.json</code>, <code>data/quality/*.json</code>. Chạy
+      <code>python -m http.server</code> ở thư mục gốc project rồi mở
+      <code>http://localhost:8000/client/</code> để dashboard đọc được artifact thật.
+    </footer>
+  </div>
+
+  <div id="tooltip" class="tooltip" role="tooltip"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
