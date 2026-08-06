@@ -1,0 +1,51 @@
+{
+  "report_name": "repaired",
+  "generated_at": "2026-08-06T03:33:51.519338+00:00",
+  "row_count": 24,
+  "checks": [
+    {
+      "name": "row_count",
+      "dimension": "completeness",
+      "passed": true,
+      "detail": {
+        "row_count": 24
+      }
+    },
+    {
+      "name": "paper_id_not_null_unique",
+      "dimension": "uniqueness",
+      "passed": true,
+      "detail": {
+        "missing": 0,
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "title_not_null",
+      "dimension": "completeness",
+      "passed": true,
+      "detail": {
+        "missing": 0
+      }
+    },
+    {
+      "name": "summary_length",
+      "dimension": "validity",
+      "passed": true,
+      "detail": {
+        "below_min_chars": 0,
+        "min_chars": 20
+      }
+    },
+    {
+      "name": "freshness",
+      "dimension": "freshness",
+      "passed": true,
+      "detail": {
+        "stale_rows": 0,
+        "threshold_days": 180
+      }
+    }
+  ],
+  "passed": true
+}
