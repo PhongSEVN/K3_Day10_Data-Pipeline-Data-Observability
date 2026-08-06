@@ -6,11 +6,11 @@
 
 | Thông tin         | Nội dung                  |
 | ------------------ | -------------------------- |
-| Họ và tên       | Lê Thị Yến Nhi             |
-| MSSV               | 2A202601031                     |
-| Khóa/Lớp         | [K3 hoặc K4]              |
-| Tên nhóm         | [Tên hoặc mã nhóm]     |
-| Vai trò chính    | Observability owner                 |
+| Họ và tên       | Lê Thị Yến Nhi          |
+| MSSV               | 2A202601031                |
+| Khóa/Lớp         | K3                         |
+| Tên nhóm         | A3                         |
+| Vai trò chính    | Observability owner        |
 | Repository         | [Đường dẫn repository] |
 | Ngày hoàn thành | [YYYY-MM-DD]               |
 
@@ -18,25 +18,25 @@
 
 ### Phần việc sở hữu
 
-| Module/deliverable | File/hàm phụ trách | Input nhận vào | Output bàn giao  | Trạng thái                                 |
-| ------------------ | --------------------- | ---------------- | ----------------- | -------------------------------------------- |
-| Data quality checks | `src/observability/quality.py` | `data/clean/`, `data/results/` | Quality/freshness artifacts trong `data/quality/` | [Hoàn thành/Một phần/Chưa hoàn thành] |
-| Reporting | `src/observability/reporting.py` | Quality/freshness artifacts | Markdown report trong `data/reports/` | [Hoàn thành/Một phần/Chưa hoàn thành] |
+| Module/deliverable  | File/hàm phụ trách              | Input nhận vào                   | Output bàn giao                                   | Trạng thái                                 |
+| ------------------- | ---------------------------------- | ---------------------------------- | -------------------------------------------------- | -------------------------------------------- |
+| Data quality checks | `src/observability/quality.py`   | `data/clean/`, `data/results/` | Quality/freshness artifacts trong`data/quality/` | [Hoàn thành/Một phần/Chưa hoàn thành] |
+| Reporting           | `src/observability/reporting.py` | Quality/freshness artifacts        | Markdown report trong`data/reports/`             | [Hoàn thành/Một phần/Chưa hoàn thành] |
 
 Chỉ nhận ownership cho phần bạn trực tiếp thực hiện. Liên hệ rõ phần việc của bạn với đầu vào, đầu ra và các thành viên phụ thuộc vào phần đó.
 
 ### Việc hỗ trợ ngoài phạm vi chính
 
-| Hoạt động                         | Thành viên/module được hỗ trợ | Kết quả                    |
-| ------------------------------------ | ------------------------------------ | ---------------------------- |
-| [Debug/tích hợp/tài liệu] | [Tên hoặc module] | [Kết quả và bằng chứng] |
+| Hoạt động                  | Thành viên/module được hỗ trợ | Kết quả                    |
+| ----------------------------- | ------------------------------------ | ---------------------------- |
+| [Debug/tích hợp/tài liệu] | [Tên hoặc module]                  | [Kết quả và bằng chứng] |
 
 ## 3. Kết quả theo vai trò
 
-| Nhiệm vụ đã thực hiện | File/hàm/artifact liên quan | Kết quả bàn giao       | Cách xác minh         |
-| --------------------------- | ----------------------------- | ------------------------- | ----------------------- |
-| [Mô tả cụ thể] | [Đường dẫn file] | [Artifact/metrics/report] | [Lệnh/artifact] |
-| [Mô tả cụ thể] | [Đường dẫn file] | [Artifact/metrics/report] | [Lệnh/artifact] |
+| Nhiệm vụ đã thực hiện | File/hàm/artifact liên quan | Kết quả bàn giao       | Cách xác minh  |
+| --------------------------- | ----------------------------- | ------------------------- | ---------------- |
+| [Mô tả cụ thể]          | [Đường dẫn file]          | [Artifact/metrics/report] | [Lệnh/artifact] |
+| [Mô tả cụ thể]          | [Đường dẫn file]          | [Artifact/metrics/report] | [Lệnh/artifact] |
 
 Nêu một output cụ thể mà phần việc của bạn tạo ra hoặc giúp xác minh:
 

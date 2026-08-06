@@ -1,85 +1,119 @@
 from __future__ import annotations
 
-from pathlib import Path
 from typing import Any
+
 import pandas as pd
 
 from core.config import Settings
 from core.utils import now_utc, write_json
 
+MIN_SUMMARY_CHARS = 20
+
 
 def run_data_quality_checks(df: pd.DataFrame, settings: Settings, report_name: str) -> dict[str, Any]:
-    total_rows = len(df)
+    row_count = len(df)
+    checks: list[dict[str, Any]] = []
 
-    # Check 1: Completeness - Row count
-    check_row_count = total_rows >= 5
+    checks.append(
+        {
+            "name": "row_count",
+            "dimension": "completeness",
+            "passed": row_count > 0,
+            "detail": {"row_count": row_count},
+        }
+    )
 
-    # Check 2: Uniqueness - paper_id not null and unique
-    check_paper_id_not_null = bool(df["paper_id"].notnull().all()) if total_rows > 0 else False
-    check_paper_id_unique = bool(df["paper_id"].is_unique) if total_rows > 0 else False
+    if "paper_id" in df.columns:
+        missing = int(df["paper_id"].isna().sum())
+        duplicates = int(df["paper_id"].duplicated().sum())
+    else:
+        missing, duplicates = row_count, 0
+    checks.append(
+        {
+            "name": "paper_id_not_null_unique",
+            "dimension": "uniqueness",
+            "passed": missing == 0 and duplicates == 0,
+            "detail": {"missing": missing, "duplicates": duplicates},
+        }
+    )
 
-    # Check 3: Validity - title not null and length >= 10
-    check_title_valid = bool((df["title"].str.strip().str.len() >= 10).all()) if total_rows > 0 else False
+    if "title" in df.columns:
+        title_missing = int((df["title"].isna() | (df["title"].astype(str).str.strip() == "")).sum())
+    else:
+        title_missing = row_count
+    checks.append(
+        {
+            "name": "title_not_null",
+            "dimension": "completeness",
+            "passed": title_missing == 0,
+            "detail": {"missing": title_missing},
+        }
+    )
 
-    # Check 4: Validity - summary not null and length >= 20
-    check_summary_valid = bool((df["summary"].str.strip().str.len() >= 20).all()) if total_rows > 0 else False
+    if "summary" in df.columns:
+        summary_lengths = df["summary"].fillna("").astype(str).str.len()
+        summary_too_short = int((summary_lengths < MIN_SUMMARY_CHARS).sum())
+    else:
+        summary_too_short = row_count
+    checks.append(
+        {
+            "name": "summary_length",
+            "dimension": "validity",
+            "passed": summary_too_short == 0,
+            "detail": {"below_min_chars": summary_too_short, "min_chars": MIN_SUMMARY_CHARS},
+        }
+    )
 
-    # Check 5: Freshness - age_days within threshold
-    max_age = int(df["age_days"].max()) if total_rows > 0 and "age_days" in df.columns else 9999
-    check_freshness = max_age <= settings.freshness_threshold_days
-
-    checks = {
-        "check_row_count": {"pass": check_row_count, "actual_value": total_rows, "expected_min": 5},
-        "check_paper_id_not_null": {"pass": check_paper_id_not_null, "actual_value": int(df["paper_id"].isnull().sum())},
-        "check_paper_id_unique": {"pass": check_paper_id_unique, "actual_value": int(df["paper_id"].duplicated().sum())},
-        "check_title_valid": {"pass": check_title_valid, "invalid_count": int((df["title"].str.strip().str.len() < 10).sum()) if total_rows > 0 else 0},
-        "check_summary_valid": {"pass": check_summary_valid, "invalid_count": int((df["summary"].str.strip().str.len() < 20).sum()) if total_rows > 0 else 0},
-        "check_freshness": {"pass": check_freshness, "max_age_days": max_age, "threshold_days": settings.freshness_threshold_days},
-    }
-
-    all_passed = all(c["pass"] for c in checks.values())
+    if "age_days" in df.columns:
+        stale_rows = int((df["age_days"] > settings.freshness_threshold_days).sum())
+    else:
+        stale_rows = row_count
+    checks.append(
+        {
+            "name": "freshness",
+            "dimension": "freshness",
+            "passed": stale_rows == 0,
+            "detail": {"stale_rows": stale_rows, "threshold_days": settings.freshness_threshold_days},
+        }
+    )
 
     report = {
         "report_name": report_name,
-        "timestamp": now_utc().isoformat(),
-        "total_rows": total_rows,
-        "overall_status": "PASS" if all_passed else "FAIL",
+        "generated_at": now_utc().isoformat(),
+        "row_count": row_count,
         "checks": checks,
+        "passed": all(check["passed"] for check in checks),
     }
 
-    out_file = settings.paths.quality_dir / f"quality_report_{report_name}.json"
-    out_file.parent.mkdir(parents=True, exist_ok=True)
-    write_json(out_file, report)
+    write_json(settings.paths.quality_dir / f"{report_name}.json", report)
     return report
 
 
-def build_freshness_report(df: pd.DataFrame, settings: Settings, report_path: Path | str) -> dict[str, Any]:
+def build_freshness_report(df: pd.DataFrame, settings: Settings, report_path) -> dict[str, Any]:
     total_rows = len(df)
-    if total_rows == 0:
-        report = {
-            "latest_published": "N/A",
-            "oldest_published": "N/A",
-            "stale_rows": 0,
-            "total_rows": 0,
-            "is_fresh": False,
-        }
+
+    if "published" in df.columns:
+        published = pd.to_datetime(df["published"], errors="coerce").dropna()
     else:
-        latest_pub = str(df["published"].max())
-        oldest_pub = str(df["published"].min())
-        stale_mask = df["age_days"] > settings.freshness_threshold_days
-        stale_rows = int(stale_mask.sum())
-        is_fresh = stale_rows == 0
+        published = pd.Series(dtype="datetime64[ns]")
 
-        report = {
-            "latest_published": latest_pub,
-            "oldest_published": oldest_pub,
-            "stale_rows": stale_rows,
-            "total_rows": total_rows,
-            "is_fresh": is_fresh,
-            "freshness_threshold_days": settings.freshness_threshold_days,
-        }
+    latest_published = published.max().date().isoformat() if not published.empty else None
+    oldest_published = published.min().date().isoformat() if not published.empty else None
 
-    out_path = Path(report_path)
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    write_json(out_path, report)
-    return report
+    if "age_days" in df.columns:
+        stale_rows = int((df["age_days"] > settings.freshness_threshold_days).sum())
+    else:
+        stale_rows = total_rows
+
+    payload = {
+        "latest_published": latest_published,
+        "oldest_published": oldest_published,
+        "stale_rows": stale_rows,
+        "total_rows": total_rows,
+        "is_fresh": total_rows > 0 and stale_rows == 0,
+        "freshness_threshold_days": settings.freshness_threshold_days,
+        "generated_at": now_utc().isoformat(),
+    }
+
+    write_json(report_path, payload)
+    return payload
