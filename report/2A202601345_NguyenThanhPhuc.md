@@ -1,164 +1,129 @@
 # Member Role Report — Day 10: Data Pipeline & Data Observability
 
-> Mỗi thành viên trong nhóm tự hoàn thành mẫu này để báo cáo đúng vai trò, phần việc và mức hiểu của mình. Không sao chép nguyên báo cáo chung hoặc báo cáo của thành viên khác. Thay nội dung trong dấu `[ ]` và xóa các dòng hướng dẫn không cần thiết trước khi nộp.
-
 ## 1. Thông tin cá nhân
 
-| Thông tin         | Nội dung                  |
-| ------------------ | -------------------------- |
-| Họ và tên       | Nguyễn Thanh Phúc             |
-| MSSV               | 2A202601345                     |
-| Khóa/Lớp         | [K3 hoặc K4]              |
-| Tên nhóm         | [Tên hoặc mã nhóm]     |
-| Vai trò chính    | Cleaning & test-set owner                 |
-| Repository         | [Đường dẫn repository] |
-| Ngày hoàn thành | [YYYY-MM-DD]               |
+| Thông tin | Nội dung |
+|---|---|
+| Họ và tên | Nguyễn Thanh Phúc |
+| MSSV | 2A202601345 |
+| Khóa/Lớp | K3 |
+| Tên nhóm | A3 |
+| Vai trò chính | Cleaning & test-set owner |
+| Repository | K3_Day10_Data-Pipeline-Data-Observability |
+| Ngày hoàn thành | 2026-08-06 |
 
 ## 2. Vai trò và phạm vi công việc
 
-### Phần việc sở hữu
-
-| Module/deliverable | File/hàm phụ trách | Input nhận vào | Output bàn giao  | Trạng thái                                 |
-| ------------------ | --------------------- | ---------------- | ----------------- | -------------------------------------------- |
-| Cleaning & data modeling | `src/ingestion/cleaning.py` | `data/raw/` | Cleaned dataset, `text_for_embedding`, `age_days` trong `data/clean/` | [Hoàn thành/Một phần/Chưa hoàn thành] |
-| Evaluation set | `src/evaluation/testset.py` | `data/clean/` | Test set (`question`, `ground_truth`, `ground_truth_doc_ids`, `question_type`) trong `data/eval/` | [Hoàn thành/Một phần/Chưa hoàn thành] |
-
-Chỉ nhận ownership cho phần bạn trực tiếp thực hiện. Liên hệ rõ phần việc của bạn với đầu vào, đầu ra và các thành viên phụ thuộc vào phần đó.
+| Module/deliverable | File/hàm phụ trách | Input | Output | Trạng thái |
+|---|---|---|---|---|
+| Cleaning & data modeling | `src/ingestion/cleaning.py::build_clean_dataframe` | `data/raw/crossref_records.json` | `data/clean/papers_clean.csv`, `papers_clean.json` | Hoàn thành |
+| Evaluation set | `src/evaluation/testset.py::build_test_set` | Cleaned DataFrame | `data/eval/test_set.json` | Hoàn thành |
 
 ### Việc hỗ trợ ngoài phạm vi chính
 
-| Hoạt động                         | Thành viên/module được hỗ trợ | Kết quả                    |
-| ------------------------------------ | ------------------------------------ | ---------------------------- |
-| [Debug/tích hợp/tài liệu] | [Tên hoặc module] | [Kết quả và bằng chứng] |
+| Hoạt động | Module được hỗ trợ | Kết quả |
+|---|---|---|
+| Không có | N/A | Không nhận ownership ngoài cleaning và evaluation set |
 
 ## 3. Kết quả theo vai trò
 
-| Nhiệm vụ đã thực hiện | File/hàm/artifact liên quan | Kết quả bàn giao       | Cách xác minh         |
-| --------------------------- | ----------------------------- | ------------------------- | ----------------------- |
-| [Mô tả cụ thể] | [Đường dẫn file] | [Artifact/metrics/report] | [Lệnh/artifact] |
-| [Mô tả cụ thể] | [Đường dẫn file] | [Artifact/metrics/report] | [Lệnh/artifact] |
+| Nhiệm vụ | File/artifact | Kết quả | Cách xác minh |
+|---|---|---|---|
+| Chuẩn hóa và lọc dữ liệu Crossref | `src/ingestion/cleaning.py`, `data/clean/` | Tạo 24 cleaned records với `text_for_embedding`, `age_days` và schema downstream | `pytest`, kiểm tra số dòng trong JSON/CSV |
+| Tạo evaluation set tái lập | `src/evaluation/testset.py`, `data/eval/test_set.json` | Tạo 72 evaluation items, gồm summary/authors/date; categories không có vì raw records không có category | Kiểm tra JSON schema và question types |
 
-Nêu một output cụ thể mà phần việc của bạn tạo ra hoặc giúp xác minh:
-
-[Mô tả artifact, metric, report hoặc kết quả tích hợp.]
+Output cụ thể: `data/clean/papers_clean.json` có 24 records; `data/eval/test_set.json` có 72 câu hỏi; `data/quality/baseline.json` có tất cả quality checks PASS.
 
 ## 4. Giải thích phần kỹ thuật đã thực hiện
 
 ### Vấn đề cần giải quyết
 
-[Phần của bạn giải quyết vấn đề gì trong pipeline?]
+Raw records từ Crossref cần được chuẩn hóa thành dữ liệu ổn định để embedding, retrieval, quality checks và evaluation dùng chung. Pipeline cũng cần một evaluation set cố định để so sánh baseline, corrupted và repaired công bằng.
 
 ### Cách triển khai
 
-[Mô tả thuật toán, quy tắc dữ liệu, orchestration hoặc quyết định chính. Không chỉ chép lại tên hàm.]
+`build_clean_dataframe` chuẩn hóa whitespace, authors, categories, title và summary; loại record thiếu `paper_id`, title hoặc summary; loại duplicate theo `paper_id`; chuẩn hóa ngày; tính `age_days`; tạo `authors_joined`, `categories_joined`, `summary_chars` và `text_for_embedding`.
+
+`build_test_set` sắp xếp document theo `paper_id`, chọn tối đa 24 document, tạo câu hỏi deterministic cho summary, authors, date và categories khi dữ liệu có giá trị, đồng thời ghi các document ID nguồn vào `ground_truth_doc_ids`.
 
 ### Input, output và contract
 
-| Thành phần                   | Mô tả                                     |
-| ------------------------------ | ------------------------------------------- |
-| Input                          | [Schema, artifact hoặc tham số]           |
-| Output                         | [Schema, artifact hoặc giá trị trả về] |
-| Module phụ thuộc             | [Module/file liên quan]                    |
-| Module sử dụng output        | [Module/file liên quan]                    |
-| Điều kiện lỗi cần xử lý | [Trường hợp thực tế]                   |
+| Thành phần | Mô tả |
+|---|---|
+| Input | `PaperRecord` từ `data/raw/crossref_records.json` |
+| Output cleaning | DataFrame có `paper_id`, `title`, `summary`, `authors_joined`, `categories_joined`, `published`, `age_days`, `text_for_embedding` và các trường nguồn |
+| Output evaluation | JSON records gồm `id`, `question_type`, `question`, `ground_truth`, `ground_truth_doc_ids` |
+| Module phụ thuộc | `src/ingestion/crossref.py`, `src/core/utils.py`, pandas |
+| Module sử dụng output | `src/retrieval/index.py`, `src/evaluation/metrics.py`, `src/observability/quality.py`, corruption flow |
+| Điều kiện lỗi | Bỏ record thiếu ID/title/summary; `ValueError` nếu evaluation DataFrame thiếu required columns |
 
 ### Cách xác minh
 
 ```bash
-[Ghi lệnh thực tế đã chạy]
+PYTHONPATH=src uv run --no-sync pytest -q tests/test_cleaning.py tests/test_testset.py
 ```
 
-- **Kết quả mong đợi:** [Mô tả.]
-- **Kết quả thực tế:** [Mô tả.]
-- **Artifact/log:** [Đường dẫn; không chứa secret.]
+- **Kết quả mong đợi:** Các test cleaning và test-set đều pass.
+- **Kết quả thực tế:** `4 passed`.
+- **Artifact:** `data/clean/papers_clean.json`, `data/clean/papers_clean.csv`, `data/eval/test_set.json`.
 
 ## 5. Một quyết định kỹ thuật quan trọng
 
-- **Bối cảnh:** [Vấn đề hoặc lựa chọn cần quyết định.]
-- **Các phương án đã cân nhắc:** [Ít nhất hai phương án.]
-- **Phương án đã chọn:** [Lựa chọn.]
-- **Lý do:** [Trade-off về correctness, data quality, reproducibility, cost hoặc độ phức tạp.]
-- **Bằng chứng quyết định phù hợp:** [Metric, artifact hoặc kết quả thử nghiệm.]
+- **Bối cảnh:** Test set phải ổn định giữa baseline, corrupted và repaired.
+- **Các phương án:** Tạo ngẫu nhiên mỗi lần chạy; dùng toàn bộ record không giới hạn; chọn tối đa 24 record theo thứ tự deterministic.
+- **Phương án đã chọn:** Sắp xếp theo `paper_id` và chọn tối đa 24 record, tạo câu hỏi theo thứ tự cố định.
+- **Lý do:** Kết quả có thể tái lập và thay đổi metric phản ánh trạng thái dữ liệu thay vì thay đổi bộ câu hỏi.
+- **Bằng chứng:** Hai lần gọi `build_test_set` trên cùng DataFrame tạo payload giống nhau; artifact có 72 items.
 
 ## 6. Một lỗi hoặc blocker đã xử lý
 
-- **Triệu chứng/lỗi nguyên văn:** [Che toàn bộ secret trước khi ghi.]
-- **Lệnh hoặc bước tái hiện:** [Lệnh/bước.]
-- **Nguyên nhân gốc:** [Root cause, không chỉ mô tả triệu chứng.]
-- **Cách xử lý:** [Thay đổi cụ thể.]
-- **Cách xác minh sau khi sửa:** [Lệnh và kết quả.]
-- **Điều học được:** [Bài học kỹ thuật.]
-
-Nếu chưa xử lý xong:
-
-- **Phạm vi bị ảnh hưởng:** [Module/artifact.]
-- **Những gì đã loại trừ:** [Các giả thuyết đã kiểm tra.]
-- **Bước tiếp theo:** [Hành động có thể kiểm chứng.]
+- **Triệu chứng:** Chạy test `testset.py` bị lỗi import `langchain` dù test chỉ cần pandas và JSON.
+- **Nguyên nhân gốc:** `src/evaluation/__init__.py` import `metrics.py` ngay khi import package; metrics kéo theo retrieval và LangChain.
+- **Cách xử lý:** Điều chỉnh import package để test riêng `testset.py` không phải tải toàn bộ RAG/LLM stack. Đây là xử lý tích hợp phục vụ việc xác minh module, không phải ownership riêng.
+- **Cách xác minh:** `PYTHONPATH=src uv run --no-sync pytest -q tests/test_cleaning.py tests/test_testset.py` cho kết quả `4 passed`.
+- **Điều học được:** Package-level eager import làm tăng dependency không cần thiết và gây khó khăn cho test theo module.
 
 ## 7. Hiểu biết về luồng end-to-end
 
-Giải thích ngắn gọn bằng lời của bạn:
-
-1. Dữ liệu đi từ Crossref đến vector index như thế nào?
-2. Evaluation set và ground-truth document IDs dùng để đo retrieval/answer quality ra sao?
-3. Quality checks khác freshness monitoring ở điểm nào trong bài lab?
-4. Vì sao phải dùng cùng test set cho baseline, corrupted và repaired?
-5. Repair được xem là thành công dựa trên artifact và metric nào?
-
-**Câu trả lời:**
-
-[Viết câu trả lời tại đây.]
+1. Crossref trả raw response và records; cleaning chuẩn hóa records vào `data/clean/`; embedding/index tạo vector index từ `text_for_embedding`; agent dùng index để retrieval và trả lời.
+2. Evaluation set chứa câu hỏi, đáp án chuẩn và document IDs chuẩn. Retrieval được xem là hit khi kết quả tìm được chứa một ID trong `ground_truth_doc_ids`; answer quality được đo bằng token F1 và judge metrics.
+3. Quality checks kiểm tra tính đầy đủ, duy nhất, hợp lệ của dữ liệu; freshness monitoring kiểm tra tuổi dữ liệu dựa trên `published` và `age_days`.
+4. Dùng cùng test set giúp so sánh baseline, corrupted và repaired mà không trộn lẫn ảnh hưởng của việc thay đổi câu hỏi.
+5. Repair chỉ được xem là thành công khi artifact repaired được tạo từ nguồn đáng tin cậy, quality/freshness phục hồi và các metrics agent cải thiện hoặc quay về gần baseline.
 
 ## 8. Phân tích kết quả
 
-### Metrics chính
+Full RAG pipeline chưa được chạy vì môi trường kiểm thử chỉ cài dependency tối thiểu cho cleaning/evaluation. Do đó chưa ghi các metric agent khi chưa có artifact hợp lệ.
 
-| Metric/signal          | Baseline | Corrupted | Repaired | Nhận xét của cá nhân |
-| ---------------------- | -------: | --------: | -------: | ------------------------- |
-| `retrieval_hit_rate` |      [ ] |       [ ] |      [ ] | [Nhận xét]              |
-| `mean_token_f1`      |      [ ] |       [ ] |      [ ] | [Nhận xét]              |
-| `judge_accuracy`     |      [ ] |       [ ] |      [ ] | [Nhận xét]              |
-| `mean_judge_score`   |      [ ] |       [ ] |      [ ] | [Nhận xét]              |
-| Quality checks         |      [ ] |       [ ] |      [ ] | [Nhận xét]              |
-| Freshness status       |      [ ] |       [ ] |      [ ] | [Nhận xét]              |
+| Metric/signal | Baseline | Corrupted | Repaired | Nhận xét |
+|---|---:|---:|---:|---|
+| `retrieval_hit_rate` | N/A | N/A | N/A | Chưa chạy embedding/retrieval |
+| `mean_token_f1` | N/A | N/A | N/A | Chưa chạy answer evaluation |
+| `judge_accuracy` | N/A | N/A | N/A | Chưa chạy judge |
+| `mean_judge_score` | N/A | N/A | N/A | Chưa chạy judge |
+| Quality checks | PASS | N/A | N/A | Baseline: 5/5 checks PASS |
+| Freshness status | Fresh | N/A | N/A | Baseline: `stale_rows=0` |
 
-### Kết luận từ số liệu
-
-Hoàn thành hai chuỗi nguyên nhân–bằng chứng sau:
-
-1. [Data corruption] → [quality/freshness signal thay đổi] → [agent metric thay đổi].
-2. [Repair action] → [quality/freshness signal phục hồi] → [agent metric phục hồi hoặc chưa phục hồi].
-
-Corruption nào ảnh hưởng rõ nhất và vì sao?
-
-[Phân tích dựa trên số liệu.]
-
-Kết quả nào khác với kỳ vọng ban đầu?
-
-[Nêu kết quả, giả thuyết và cách đã kiểm tra.]
+Kết quả đã xác minh: `quality_passed=True`, `freshness=True`, `stale_rows=0`. Corruption và repair chưa được kết luận vì chưa chạy corruption flow.
 
 ## 9. Điều học được và hướng cải thiện
 
-### Ba điều quan trọng nhất
-
-1. [Điều học được về data pipeline.]
-2. [Điều học được về data quality/observability.]
-3. [Điều học được về ảnh hưởng của data đến RAG agent.]
+1. Data pipeline cần data contract rõ ràng giữa raw, clean, embedding và evaluation.
+2. Quality checks và freshness là hai tín hiệu khác nhau nhưng đều cần trường dữ liệu được chuẩn hóa như `paper_id`, `summary` và `age_days`.
+3. Evaluation set cố định là điều kiện cần để liên hệ thay đổi dữ liệu với thay đổi chất lượng RAG.
 
 ### Nếu có thêm thời gian
 
-[Nêu một cải thiện cụ thể, lý do và cách đo cải thiện đó.]
+Chạy full baseline/corruption flow với embedding và LLM dependencies, sau đó điền các metric retrieval/answer và đối chiếu với `data/quality/` và `data/reports/`. Có thể bổ sung categories vào raw parsing để evaluation set bao phủ đủ bốn question types.
 
 ## 10. Cam kết của thành viên
 
-Đánh dấu sau khi tự kiểm tra:
+- [x] Nội dung báo cáo phản ánh đúng phần việc và mức hiểu của tôi.
+- [x] Tôi có thể giải thích luồng end-to-end, không chỉ module mình phụ trách.
+- [x] Mọi kết luận về kết quả đã ghi đều có artifact hoặc metric để đối chiếu.
+- [x] Tôi không ghi “đã chạy thành công” cho phần chưa được kiểm chứng.
+- [x] Báo cáo không chứa `.env`, API key, token hoặc secret.
+- [x] Báo cáo này không phải bản sao nguyên văn của báo cáo nhóm hoặc báo cáo thành viên khác.
 
-- [ ] Nội dung báo cáo phản ánh đúng phần việc và mức hiểu của tôi.
-- [ ] Tôi có thể giải thích luồng end-to-end, không chỉ module mình phụ trách.
-- [ ] Mọi kết luận về kết quả đều có artifact hoặc metric để đối chiếu.
-- [ ] Tôi không ghi "đã chạy thành công" cho phần chưa được kiểm chứng.
-- [ ] Báo cáo không chứa `.env`, API key, token hoặc secret.
-- [ ] Báo cáo này không phải bản sao nguyên văn của báo cáo nhóm hoặc báo cáo thành viên khác.
-
-**Họ và tên:** Nguyễn Thanh Phúc
-**Ngày xác nhận:** [YYYY-MM-DD]
+**Họ và tên:** Nguyễn Thanh Phúc  
+**Ngày xác nhận:** 2026-08-06
