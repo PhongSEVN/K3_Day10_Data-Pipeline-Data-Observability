@@ -1,6 +1,6 @@
 # Phase 1 Baseline Report
 
-Generated at: 2026-08-06T03:33:04.724554+00:00
+Generated at: 2026-08-06T03:39:13.576134+00:00
 
 ## Source summary
 
@@ -15,10 +15,10 @@ Generated at: 2026-08-06T03:33:04.724554+00:00
 | Metric | Value |
 | --- | ---: |
 | `retrieval_hit_rate` | 1.0000 |
-| `mean_token_f1` | 0.8264 |
-| `judge_accuracy` | 0.7917 |
-| `mean_judge_score` | 4.0833 |
-| samples | 24 |
+| `mean_token_f1` | 0.4263 |
+| `judge_accuracy` | 0.3472 |
+| `mean_judge_score` | 2.3611 |
+| samples | 72 |
 
 ## Data quality
 
