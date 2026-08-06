@@ -15,11 +15,11 @@
 
 | STT | Họ và tên | MSSV | Vai trò chính | Module/deliverable sở hữu |
 | --: | --- | --- | --- | --- |
-| 1 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 2 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 3 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 4 | [Nếu có] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 5 | [Nếu có] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
+| 1 | Phạm Khánh Linh | 2A202601507 | Source owner | `src/ingestion/crossref.py` — raw response/records trong `data/raw/` |
+| 2 | Nguyễn Thanh Phúc | 2A202601345 | Cleaning & test-set owner | `src/ingestion/cleaning.py`, `src/evaluation/testset.py` — `data/clean/`, `data/eval/` |
+| 3 | Lê Thị Yến Nhi | 2A202601031 | Observability owner | `src/observability/quality.py`, `src/observability/reporting.py` — `data/quality/` |
+| 4 | Vũ Huy Hoàng | 2A202601057 | Corruption & repair owner | `src/ingestion/corruption.py` — corruption log, corrupted/repaired data |
+| 5 | Nguyễn Văn Phong | 2A202601241 | Pipeline integration & evidence owner | `src/pipelines/phase1.py`, `src/pipelines/corruption_flow.py` — full flow, metrics, comparison report |
 
 ## 2. Tóm tắt kết quả
 
@@ -58,13 +58,13 @@ Crossref API
 
 | Khối             | Input          | Xử lý chính             | Output/artifact          | Owner          |
 | ----------------- | -------------- | -------------------------- | ------------------------ | -------------- |
-| Ingestion         | [Nguồn/input] | [Fetch, retry, parse...]   | [Đường dẫn artifact] | [Thành viên] |
-| Cleaning          | [Input]        | [Các quy tắc chính]     | [Đường dẫn artifact] | [Thành viên] |
-| Embedding/index   | [Input]        | [Model/index config]       | [Đường dẫn artifact] | [Thành viên] |
-| Evaluation        | [Input]        | [Test set và metrics]     | [Đường dẫn artifact] | [Thành viên] |
-| Observability     | [Input]        | [Quality/freshness checks] | [Đường dẫn artifact] | [Thành viên] |
-| Corruption/repair | [Input]        | [Corruption và repair]    | [Đường dẫn artifact] | [Thành viên] |
-| Orchestration     | [Input]        | [Thứ tự chạy]           | [Reports/metrics]        | [Thành viên] |
+| Ingestion         | Crossref API (`CROSSREF_API_URL`) | Fetch, retry/backoff, parse response thành record schema | `data/raw/` (raw response + raw records) | Phạm Khánh Linh |
+| Cleaning          | `data/raw/`        | Remove record không hợp lệ, chuẩn hóa title/summary/authors/categories, tạo `text_for_embedding`, tính `age_days` | `data/clean/` | Nguyễn Thanh Phúc |
+| Embedding/index   | `data/clean/`        | `sentence-transformers/all-MiniLM-L6-v2` + ChromaDB collection | `data/embeddings/` | Nguyễn Văn Phong |
+| Evaluation        | `data/clean/`        | Tạo test set (`question`, `ground_truth`, `ground_truth_doc_ids`, `question_type`) và tính metrics | `data/eval/`, `data/results/baseline_metrics.json` | Nguyễn Thanh Phúc |
+| Observability     | `data/clean/`, `data/results/`        | Data quality checks + freshness monitoring | `data/quality/` | Lê Thị Yến Nhi |
+| Corruption/repair | `data/clean/` (baseline)        | Xóa record, blank summary, noise, truncate title, stale date, duplicate; repair lại từ raw | `data/results/corruption_log.json`, corrupted/repaired dataset | Vũ Huy Hoàng |
+| Orchestration     | Tất cả module trên        | Ghép `phase1.py` + `corruption_flow.py`, chạy end-to-end, so sánh baseline/corrupted/repaired | `data/reports/phase1_report.md`, `data/reports/corruption_report.md` | Nguyễn Văn Phong |
 
 ## 4. Cách tái hiện kết quả
 
