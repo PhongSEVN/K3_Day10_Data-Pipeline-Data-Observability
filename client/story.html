@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Pipeline — Giải thích từng bước</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="story.css" />
+</head>
+
+<body class="story-body">
+  <div class="progress-rail">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+
+  <nav class="tab-nav">
+    <a href="index.html" class="tab-link">Dashboard</a>
+    <a href="story.html" class="tab-link is-active">Giải thích</a>
+    <button class="theme-toggle" id="theme-toggle" type="button">Dark mode</button>
+  </nav>
+
+  <main class="story">
+
+    <section class="story-step story-hero" data-step>
+      <p class="story-kicker">Day 10 — Data Pipeline &amp; Observability</p>
+      <h1>Từ Crossref đến câu trả lời của agent</h1>
+      <p class="story-lead">Cuộn xuống để đi qua từng bước: lấy dữ liệu, làm sạch, đo chất lượng, cố ý phá dữ liệu, rồi
+        phục hồi — kèm số liệu thật lấy từ lần chạy pipeline gần nhất.</p>
+      <div class="scroll-hint">Cuộn xuống ↓</div>
+    </section>
+
+    <section class="story-step" data-step>
+      <span class="step-index">00</span>
+      <h2>ETL</h2>
+      <div class="etl-flow">
+        <div class="etl-node">
+          <strong>Extract</strong>
+          <span>fetch_source_records() gọi Crossref API</span>
+        </div>
+        <div class="etl-arrow">→</div>
+        <div class="etl-node">
+          <strong>Transform</strong>
+          <span>build_clean_dataframe() chuẩn hóa + tạo text_for_embedding</span>
+        </div>
+        <div class="etl-arrow">→</div>
+        <div class="etl-node">
+          <strong>Load</strong>
+          <span>LocalEmbeddingIndex.build() nạp vào ChromaDB</span>
+        </div>
+      </div>
+      <p class="story-note">Transform chạy <em>trước</em> khi load vào kho phục vụ truy vấn. Raw JSON chỉ là landing
+        zone để truy vết — không phải nơi transform diễn ra.</p>
+    </section>
+
+    <section class="story-step" data-step>
+      <span class="step-index">01</span>
+      <h2>Nguồn dữ liệu: Crossref REST API</h2>
+      <p>API công khai chứa metadata bài báo khoa học có DOI. Query lọc theo chủ đề, chỉ lấy bài có abstract, xuất bản
+        trong 180 ngày gần nhất.</p>
+      <pre class="story-code">{
+  "paper_id": "10.3390/buildings16132637",
+  "title": "An Agentic AI System for Roof Design Compliance...",
+  "summary": "Designers, engineers, and building officials face...",
+  "authors": ["Nawari O. Nawari", "Oluwatoyin O. Lawal"],
+  "categories": [],
+  "published": "2026-07-02",
+  "pdf_url": ""
+}</pre>
+      <p class="story-note">2 file raw được lưu để truy vết: <code>crossref_response.json</code> (nguyên payload) và
+        <code>crossref_records.json</code> (đã parse).
+      </p>
+    </section>
+
+    <section class="story-step" data-step>
+      <span class="step-index">02</span>
+      <h2>Cleaning: rule accept / reject</h2>
+      <p>1 record chỉ bị <strong>reject</strong> khi thiếu 1 trong 3 field lõi — mọi field phụ khác được nới.</p>
+      <div class="rule-grid">
+        <div class="rule-card rule-reject">
+          <h3>Reject</h3>
+          <ul>
+            <li><code>paper_id</code> rỗng</li>
+            <li><code>title</code> rỗng</li>
+            <li><code>summary</code> rỗng</li>
+            <li><code>paper_id</code> trùng record đã nhận</li>
+          </ul>
+        </div>
+        <div class="rule-card rule-accept">
+          <h3>Vẫn Accept dù thiếu</h3>
+          <ul>
+            <li><code>authors</code> / <code>categories</code> rỗng</li>
+            <li><code>published</code> parse lỗi → <code>age_days=None</code></li>
+            <li><code>pdf_url</code> rỗng</li>
+          </ul>
+        </div>
+      </div>
+      <p class="story-note">Sau khi accept: chuẩn hóa whitespace, tính <code>age_days</code>, ghép
+        <code>Title + Summary + Authors + Categories</code> thành <code>text_for_embedding</code>.
+      </p>
+    </section>
+
+    <section class="story-step" data-step>
+      <span class="step-index">03</span>
+      <h2>Embedding + Vector store</h2>
+      <p><code>sentence-transformers/all-MiniLM-L6-v2</code> — chạy local, không tốn API key. Encode
+        <code>text_for_embedding</code> thành vector, nạp vào <strong>ChromaDB</strong>.
+      </p>
+      <div class="collection-row">
+        <span class="collection-chip series-baseline">papers-baseline</span>
+        <span class="collection-chip series-corrupted">papers-corrupted</span>
+        <span class="collection-chip series-repaired">papers-repaired</span>
+      </div>
+      <p class="story-note">3 collection riêng — tránh lẫn dữ liệu giữa 3 trạng thái đang so sánh.</p>
+    </section>
+
+    <section class="story-step" data-step>
+      <span class="step-index">04</span>
+      <h2>72 câu hỏi — dùng chung cho cả 3 trạng thái</h2>
+      <p>24 paper × 3 loại câu hỏi (summary, authors, date/categories). Mỗi câu có sẵn đáp án đúng và document đúng để
+        đối chiếu.</p>
+      <pre class="story-code">{
+  "id": "eval-0001",
+  "question_type": "summary",
+  "question": "What is the summary of the paper titled '...'?",
+  "ground_truth": "Abstract Diagnosing jawbone lesions...",
+  "ground_truth_doc_ids": ["10.1007/s10278-026-02086-9"]
+}</pre>
+      <p class="story-note">Giữ nguyên bộ câu hỏi này cho baseline / corrupted / repaired — đổi thước đo giữa chừng thì
+        không so sánh công bằng được.</p>
+    </section>
+
+    <section class="story-step" data-step>
+      <span class="step-index">05</span>
+      <h2>4 chỉ số đo chất lượng</h2>
+      <div class="metric-grid">
+        <div class="metric-card">
+          <h3>retrieval_hit_rate</h3>
+          <p>Tìm đúng tài liệu trong top-k không. Đo <em>bước tìm kiếm</em>.</p>
+        </div>
+        <div class="metric-card">
+          <h3>mean_token_f1</h3>
+          <p>Trùng từ giữa answer và đáp án đúng — nhạy với cách diễn đạt.</p>
+        </div>
+        <div class="metric-card">
+          <h3>judge_accuracy</h3>
+          <p>LLM khác chấm answer có đúng ý không (0/1 mỗi câu, lấy tỷ lệ).</p>
+        </div>
+        <div class="metric-card">
+          <h3>mean_judge_score</h3>
+          <p>Điểm trung bình LLM chấm, thang 1–5.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-step" data-step>
+      <span class="step-index">06</span>
+      <h2>Data quality + Freshness — bắt lỗi độc lập với agent</h2>
+      <p>5 check chạy trên dataframe đã clean, không cần đợi agent trả lời sai mới biết có vấn đề:</p>
+      <ul class="check-mini-list">
+        <li><code>row_count</code> — dataframe không rỗng</li>
+        <li><code>paper_id_not_null_unique</code> — không null, không trùng</li>
+        <li><code>title_not_null</code> — title không rỗng</li>
+        <li><code>summary_length</code> — summary ≥ 20 ký tự</li>
+        <li><code>freshness</code> — <code>age_days ≤ 180</code></li>
+      </ul>
+      <p class="story-note">Freshness còn có report riêng:
+        <code>is_fresh = total_rows &gt; 0 and stale_rows == 0</code>.
+      </p>
+    </section>
+
+    <section class="story-step story-corrupt" data-step>
+      <span class="step-index">07</span>
+      <h2>Cố ý phá dữ liệu</h2>
+      <p>Lấy đúng data baseline, bơm 6 loại lỗi thật vào bản sao — log đầy đủ trong <code>corruption_log.json</code>:
+      </p>
+      <ol class="corrupt-list">
+        <li>Drop 2 record mới nhất</li>
+        <li>Blank summary 2 dòng</li>
+        <li>Inject noise vào text 2 dòng</li>
+        <li>Truncate title 2 dòng — <code>"SafeRAG: A Large-Language..."</code> → <code>"SafeR"</code></li>
+        <li>Làm ngày publish cũ đi — về <code>2020-01-01</code>, vượt ngưỡng freshness</li>
+        <li>Thêm 2 dòng trùng lặp</li>
+      </ol>
+    </section>
+
+    <section class="story-step story-lab" data-step>
+      <span class="step-index">07b</span>
+      <h2>Lab: tự chạy mô phỏng, xem tác động ngay</h2>
+      <p>JS bên dưới chạy <strong>đúng 6 bước corruption ở trên</strong>, cùng thứ tự, cùng chỉ số dòng — mirror 1:1
+        <code>src/ingestion/corruption.py</code>. Mỗi lần bấm "Chạy" sẽ <strong>chọn ngẫu nhiên 8 record khác nhau</strong>
+        từ toàn bộ <code>data/clean/papers_clean.json</code> — bấm nhiều lần để thấy corruption tác động lên record
+        khác nhau, không phải kết quả cứng.
+      </p>
+      <div class="lab-controls">
+        <button class="btn btn-primary" id="lab-run">Chạy mô phỏng corruption</button>
+        <button class="btn btn-ghost" id="lab-reset">Reset</button>
+      </div>
+      <div id="lab-status" class="story-note">Chưa chạy.</div>
+
+      <div id="lab-quality" class="lab-quality-grid"></div>
+
+      <h3 class="lab-subheading">Tác động lên retrieval — trùng từ (token F1) với câu hỏi thật</h3>
+      <p class="story-note">Ước lượng bằng công thức token-F1 giống <code>metrics.py</code> (không phải embedding
+        cosine thật) giữa <code>text_for_embedding</code> và <code>ground_truth</code> của câu hỏi thật trong
+        <code>test_set.json</code> liên quan đến record bị corrupt.
+      </p>
+      <div id="lab-impact" class="lab-impact-list"></div>
+    </section>
+
+    <section class="story-step" data-step>
+      <span class="step-index">08</span>
+      <h2>Impact thật — số liệu giảm</h2>
+      <p>Chạy lại đúng 72 câu hỏi cũ trên data đã hỏng:</p>
+      <div id="story-metric-bars" class="story-metric-bars">
+        <p class="story-note">Đang tải số liệu thật từ <code>data/results/</code>…</p>
+      </div>
+      <p class="story-note">Quality check cũng FAIL song song — <code>title_not_null</code>, <code>freshness</code> bắt
+        được lỗi trước khi user thấy câu trả lời sai.</p>
+    </section>
+
+    <section class="story-step story-conclusion" data-step>
+      <span class="step-index">10</span>
+      <h2>Kết luận nhân quả</h2>
+      <ol class="conclusion-list">
+        <li>Corruption (truncate title + inject noise) → vector embedding lệch nghĩa → retrieval miss ground truth doc →
+          <code>retrieval_hit_rate</code> giảm.
+        </li>
+        <li>Corruption (stale date) → <code>age_days</code> vượt ngưỡng → <code>is_fresh=false</code> — quality gate bắt
+          lỗi độc lập với metric agent.</li>
+        <li>Repair từ raw source → rebuild toàn bộ pipeline → mọi metric quay về đúng baseline.</li>
+      </ol>
+      <p class="story-lead">Data quality quyết định chất lượng RAG — không chỉ là pipeline chạy được là xong.</p>
+      <a class="btn btn-primary" href="index.html">Xem dashboard đầy đủ →</a>
+    </section>
+
+  </main>
+
+  <script src="corrupt-sim.js"></script>
+  <script src="story.js"></script>
+</body>
+
+</html>
