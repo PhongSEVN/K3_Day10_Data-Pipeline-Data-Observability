@@ -34,9 +34,17 @@ def _save_clean_dataset(settings: Settings, df: pd.DataFrame) -> None:
 
 
 def _demo_agent_answers(settings: Settings, index: LocalEmbeddingIndex, test_set: list[dict[str, Any]]) -> list[dict[str, str]]:
-    agent = build_agent(settings=settings, index=index)
     demo_questions = [item["question"] for item in test_set[:3]]
-    return [{"question": question, "answer": run_agent_question(agent, question)} for question in demo_questions]
+    try:
+        agent = build_agent(settings=settings, index=index)
+        return [{"question": question, "answer": run_agent_question(agent, question)} for question in demo_questions]
+    except Exception:
+        results = []
+        for question in demo_questions:
+            res = index.search(question, top_k=1)
+            ans = res[0].content if res else "No relevant context found."
+            results.append({"question": question, "answer": f"[Local Index Retrieval] {ans}"})
+        return results
 
 
 def main() -> None:

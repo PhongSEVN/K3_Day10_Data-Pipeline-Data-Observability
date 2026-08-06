@@ -1,0 +1,230 @@
+[
+  {
+    "paper_id": "10.1016/j.artint.2025.104201",
+    "title": "Agentic RAG for Data Observability and Pipeline Healing",
+    "summary": "This paper presents an agentic RAG framework designed to monitor data quality and execute automated data pipeline repair.",
+    "authors": [
+      "Vu Huy Hoang",
+      "Nguyen Phong"
+    ],
+    "categories": [
+      "Data Observability",
+      "RAG Pipeline"
+    ],
+    "primary_category": "Data Observability",
+    "published": "2026-07-15",
+    "updated": "2026-07-20",
+    "abs_url": "https://doi.org/10.1016/j.artint.2025.104201",
+    "pdf_url": "",
+    "comment": "Academic Press Observability"
+  },
+  {
+    "paper_id": "10.1016/j.artint.2025.104202",
+    "title": "Evaluating Vector Index Resilience Against Data Corruption",
+    "summary": "We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+    "authors": [
+      "Vu Huy Hoang",
+      "Nguyen Phong"
+    ],
+    "categories": [
+      "Data Observability",
+      "RAG Pipeline"
+    ],
+    "primary_category": "Data Observability",
+    "published": "2026-07-16",
+    "updated": "2026-07-20",
+    "abs_url": "https://doi.org/10.1016/j.artint.2025.104202",
+    "pdf_url": "",
+    "comment": "Academic Press Observability"
+  },
+  {
+    "paper_id": "10.1016/j.artint.2025.104203",
+    "title": "Freshness Monitoring in Continuous Knowledge Base Ingestion",
+    "summary": "Automated freshness detection tracks publication age and staleness thresholds across Crossref scholarly streams.",
+    "authors": [
+      "Vu Huy Hoang",
+      "Nguyen Phong"
+    ],
+    "categories": [
+      "Data Observability",
+      "RAG Pipeline"
+    ],
+    "primary_category": "Data Observability",
+    "published": "2026-07-17",
+    "updated": "2026-07-20",
+    "abs_url": "https://doi.org/10.1016/j.artint.2025.104203",
+    "pdf_url": "",
+    "comment": "Academic Press Observability"
+  },
+  {
+    "paper_id": "10.1016/j.artint.2025.104204",
+    "title": "Data Quality Metrics and Assertions for RAG Knowledge Bases",
+    "summary": "A comprehensive study on completeness, uniqueness, and text length metrics in production RAG data pipelines.",
+    "authors": [
+      "Vu Huy Hoang",
+      "Nguyen Phong"
+    ],
+    "categories": [
+      "Data Observability",
+      "RAG Pipeline"
+    ],
+    "primary_category": "Data Observability",
+    "published": "2026-07-18",
+    "updated": "2026-07-20",
+    "abs_url": "https://doi.org/10.1016/j.artint.2025.104204",
+    "pdf_url": "",
+    "comment": "Academic Press Observability"
+  },
+  {
+    "paper_id": "10.1016/j.artint.2025.104205",
+    "title": "Automated Recovery of Corrupted Embeddings in Vector Stores",
+    "summary": "Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.",
+    "authors": [
+      "Vu Huy Hoang",
+      "Nguyen Phong"
+    ],
+    "categories": [
+      "Data Observability",
+      "RAG Pipeline"
+    ],
+    "primary_category": "Data Observability",
+    "published": "2026-07-19",
+    "updated": "2026-07-20",
+    "abs_url": "https://doi.org/10.1016/j.artint.2025.104205",
+    "pdf_url": "",
+    "comment": "Academic Press Observability"
+  },
+  {
+    "paper_id": "10.1016/j.artint.2025.104206",
+    "title": "Crossref Metadata Ingestion and Parsing for Academic Search Agents",
+    "summary": "Standardizing Crossref REST API payloads into tabular clean schemas for vector embedding generation.",
+    "authors": [
+      "Vu Huy Hoang",
+      "Nguyen Phong"
+    ],
+    "categories": [
+      "Data Observability",
+      "RAG Pipeline"
+    ],
+    "primary_category": "Data Observability",
+    "published": "2026-07-20",
+    "updated": "2026-07-20",
+    "abs_url": "https://doi.org/10.1016/j.artint.2025.104206",
+    "pdf_url": "",
+    "comment": "Academic Press Observability"
+  },
+  {
+    "paper_id": "10.1016/j.artint.2025.104207",
+    "title": "Benchmark Dataset for RAG Data Observability Evaluation",
+    "summary": "A synthetic evaluation suite with ground truth document IDs to measure token F1 and judge accuracy under noise.",
+    "authors": [
+      "Vu Huy Hoang",
+      "Nguyen Phong"
+    ],
+    "categories": [
+      "Data Observability",
+      "RAG Pipeline"
+    ],
+    "primary_category": "Data Observability",
+    "published": "2026-07-21",
+    "updated": "2026-07-20",
+    "abs_url": "https://doi.org/10.1016/j.artint.2025.104207",
+    "pdf_url": "",
+    "comment": "Academic Press Observability"
+  },
+  {
+    "paper_id": "10.1016/j.artint.2025.104208",
+    "title": "Impact of Title Truncation on Dense Vector Retrieval Precision",
+    "summary": "Analyzing how truncated paper titles distort MiniLM sentence embeddings and degrade RAG answer quality.",
+    "authors": [
+      "Vu Huy Hoang",
+      "Nguyen Phong"
+    ],
+    "categories": [
+      "Data Observability",
+      "RAG Pipeline"
+    ],
+    "primary_category": "Data Observability",
+    "published": "2026-07-22",
+    "updated": "2026-07-20",
+    "abs_url": "https://doi.org/10.1016/j.artint.2025.104208",
+    "pdf_url": "",
+    "comment": "Academic Press Observability"
+  },
+  {
+    "paper_id": "10.1016/j.artint.2025.104209",
+    "title": "Stale Document Filtering and Real-Time Data Pipeline Remediation",
+    "summary": "Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses.",
+    "authors": [
+      "Vu Huy Hoang",
+      "Nguyen Phong"
+    ],
+    "categories": [
+      "Data Observability",
+      "RAG Pipeline"
+    ],
+    "primary_category": "Data Observability",
+    "published": "2026-07-23",
+    "updated": "2026-07-20",
+    "abs_url": "https://doi.org/10.1016/j.artint.2025.104209",
+    "pdf_url": "",
+    "comment": "Academic Press Observability"
+  },
+  {
+    "paper_id": "10.1016/j.artint.2025.104210",
+    "title": "Deduplication Strategies for Noise-Resilient Vector Databases",
+    "summary": "Preventing duplicated records from dominating Top-K search results in ChromaDB collections.",
+    "authors": [
+      "Vu Huy Hoang",
+      "Nguyen Phong"
+    ],
+    "categories": [
+      "Data Observability",
+      "RAG Pipeline"
+    ],
+    "primary_category": "Data Observability",
+    "published": "2026-07-24",
+    "updated": "2026-07-20",
+    "abs_url": "https://doi.org/10.1016/j.artint.2025.104210",
+    "pdf_url": "",
+    "comment": "Academic Press Observability"
+  },
+  {
+    "paper_id": "10.1016/j.artint.2025.104211",
+    "title": "LLM-as-a-Judge Evaluation Protocols for Data Quality Assessment",
+    "summary": "Using structured LLM outputs to grade answer correctness before and after data pipeline remediation.",
+    "authors": [
+      "Vu Huy Hoang",
+      "Nguyen Phong"
+    ],
+    "categories": [
+      "Data Observability",
+      "RAG Pipeline"
+    ],
+    "primary_category": "Data Observability",
+    "published": "2026-07-15",
+    "updated": "2026-07-20",
+    "abs_url": "https://doi.org/10.1016/j.artint.2025.104211",
+    "pdf_url": "",
+    "comment": "Academic Press Observability"
+  },
+  {
+    "paper_id": "10.1016/j.artint.2025.104212",
+    "title": "End-to-End Lineage Tracking for Scholarly Vector Observability",
+    "summary": "Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics.",
+    "authors": [
+      "Vu Huy Hoang",
+      "Nguyen Phong"
+    ],
+    "categories": [
+      "Data Observability",
+      "RAG Pipeline"
+    ],
+    "primary_category": "Data Observability",
+    "published": "2026-07-16",
+    "updated": "2026-07-20",
+    "abs_url": "https://doi.org/10.1016/j.artint.2025.104212",
+    "pdf_url": "",
+    "comment": "Academic Press Observability"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "report_name": "repaired",
+  "timestamp": "2026-08-06T03:11:52.772161+00:00",
+  "total_rows": 12,
+  "overall_status": "PASS",
+  "checks": {
+    "check_row_count": {
+      "pass": true,
+      "actual_value": 12,
+      "expected_min": 5
+    },
+    "check_paper_id_not_null": {
+      "pass": true,
+      "actual_value": 0
+    },
+    "check_paper_id_unique": {
+      "pass": true,
+      "actual_value": 0
+    },
+    "check_title_valid": {
+      "pass": true,
+      "invalid_count": 0
+    },
+    "check_summary_valid": {
+      "pass": true,
+      "invalid_count": 0
+    },
+    "check_freshness": {
+      "pass": true,
+      "max_age_days": 22,
+      "threshold_days": 180
+    }
+  }
+}

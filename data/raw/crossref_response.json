@@ -1,0 +1,499 @@
+{
+  "status": "ok",
+  "message": {
+    "items": [
+      {
+        "DOI": "10.1016/j.artint.2025.104201",
+        "title": [
+          "Agentic RAG for Data Observability and Pipeline Healing"
+        ],
+        "abstract": "<jats:p>This paper presents an agentic RAG framework designed to monitor data quality and execute automated data pipeline repair.</jats:p>",
+        "author": [
+          {
+            "given": "Vu",
+            "family": "Huy Hoang"
+          },
+          {
+            "given": "Nguyen",
+            "family": "Phong"
+          }
+        ],
+        "subject": [
+          "Data Observability",
+          "RAG Pipeline"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              15
+            ]
+          ]
+        },
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.artint.2025.104201",
+        "publisher": "Academic Press Observability"
+      },
+      {
+        "DOI": "10.1016/j.artint.2025.104202",
+        "title": [
+          "Evaluating Vector Index Resilience Against Data Corruption"
+        ],
+        "abstract": "<jats:p>We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.</jats:p>",
+        "author": [
+          {
+            "given": "Vu",
+            "family": "Huy Hoang"
+          },
+          {
+            "given": "Nguyen",
+            "family": "Phong"
+          }
+        ],
+        "subject": [
+          "Data Observability",
+          "RAG Pipeline"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              16
+            ]
+          ]
+        },
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.artint.2025.104202",
+        "publisher": "Academic Press Observability"
+      },
+      {
+        "DOI": "10.1016/j.artint.2025.104203",
+        "title": [
+          "Freshness Monitoring in Continuous Knowledge Base Ingestion"
+        ],
+        "abstract": "<jats:p>Automated freshness detection tracks publication age and staleness thresholds across Crossref scholarly streams.</jats:p>",
+        "author": [
+          {
+            "given": "Vu",
+            "family": "Huy Hoang"
+          },
+          {
+            "given": "Nguyen",
+            "family": "Phong"
+          }
+        ],
+        "subject": [
+          "Data Observability",
+          "RAG Pipeline"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              17
+            ]
+          ]
+        },
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.artint.2025.104203",
+        "publisher": "Academic Press Observability"
+      },
+      {
+        "DOI": "10.1016/j.artint.2025.104204",
+        "title": [
+          "Data Quality Metrics and Assertions for RAG Knowledge Bases"
+        ],
+        "abstract": "<jats:p>A comprehensive study on completeness, uniqueness, and text length metrics in production RAG data pipelines.</jats:p>",
+        "author": [
+          {
+            "given": "Vu",
+            "family": "Huy Hoang"
+          },
+          {
+            "given": "Nguyen",
+            "family": "Phong"
+          }
+        ],
+        "subject": [
+          "Data Observability",
+          "RAG Pipeline"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              18
+            ]
+          ]
+        },
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.artint.2025.104204",
+        "publisher": "Academic Press Observability"
+      },
+      {
+        "DOI": "10.1016/j.artint.2025.104205",
+        "title": [
+          "Automated Recovery of Corrupted Embeddings in Vector Stores"
+        ],
+        "abstract": "<jats:p>Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.</jats:p>",
+        "author": [
+          {
+            "given": "Vu",
+            "family": "Huy Hoang"
+          },
+          {
+            "given": "Nguyen",
+            "family": "Phong"
+          }
+        ],
+        "subject": [
+          "Data Observability",
+          "RAG Pipeline"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              19
+            ]
+          ]
+        },
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.artint.2025.104205",
+        "publisher": "Academic Press Observability"
+      },
+      {
+        "DOI": "10.1016/j.artint.2025.104206",
+        "title": [
+          "Crossref Metadata Ingestion and Parsing for Academic Search Agents"
+        ],
+        "abstract": "<jats:p>Standardizing Crossref REST API payloads into tabular clean schemas for vector embedding generation.</jats:p>",
+        "author": [
+          {
+            "given": "Vu",
+            "family": "Huy Hoang"
+          },
+          {
+            "given": "Nguyen",
+            "family": "Phong"
+          }
+        ],
+        "subject": [
+          "Data Observability",
+          "RAG Pipeline"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.artint.2025.104206",
+        "publisher": "Academic Press Observability"
+      },
+      {
+        "DOI": "10.1016/j.artint.2025.104207",
+        "title": [
+          "Benchmark Dataset for RAG Data Observability Evaluation"
+        ],
+        "abstract": "<jats:p>A synthetic evaluation suite with ground truth document IDs to measure token F1 and judge accuracy under noise.</jats:p>",
+        "author": [
+          {
+            "given": "Vu",
+            "family": "Huy Hoang"
+          },
+          {
+            "given": "Nguyen",
+            "family": "Phong"
+          }
+        ],
+        "subject": [
+          "Data Observability",
+          "RAG Pipeline"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              21
+            ]
+          ]
+        },
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.artint.2025.104207",
+        "publisher": "Academic Press Observability"
+      },
+      {
+        "DOI": "10.1016/j.artint.2025.104208",
+        "title": [
+          "Impact of Title Truncation on Dense Vector Retrieval Precision"
+        ],
+        "abstract": "<jats:p>Analyzing how truncated paper titles distort MiniLM sentence embeddings and degrade RAG answer quality.</jats:p>",
+        "author": [
+          {
+            "given": "Vu",
+            "family": "Huy Hoang"
+          },
+          {
+            "given": "Nguyen",
+            "family": "Phong"
+          }
+        ],
+        "subject": [
+          "Data Observability",
+          "RAG Pipeline"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              22
+            ]
+          ]
+        },
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.artint.2025.104208",
+        "publisher": "Academic Press Observability"
+      },
+      {
+        "DOI": "10.1016/j.artint.2025.104209",
+        "title": [
+          "Stale Document Filtering and Real-Time Data Pipeline Remediation"
+        ],
+        "abstract": "<jats:p>Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses.</jats:p>",
+        "author": [
+          {
+            "given": "Vu",
+            "family": "Huy Hoang"
+          },
+          {
+            "given": "Nguyen",
+            "family": "Phong"
+          }
+        ],
+        "subject": [
+          "Data Observability",
+          "RAG Pipeline"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              23
+            ]
+          ]
+        },
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.artint.2025.104209",
+        "publisher": "Academic Press Observability"
+      },
+      {
+        "DOI": "10.1016/j.artint.2025.104210",
+        "title": [
+          "Deduplication Strategies for Noise-Resilient Vector Databases"
+        ],
+        "abstract": "<jats:p>Preventing duplicated records from dominating Top-K search results in ChromaDB collections.</jats:p>",
+        "author": [
+          {
+            "given": "Vu",
+            "family": "Huy Hoang"
+          },
+          {
+            "given": "Nguyen",
+            "family": "Phong"
+          }
+        ],
+        "subject": [
+          "Data Observability",
+          "RAG Pipeline"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              24
+            ]
+          ]
+        },
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.artint.2025.104210",
+        "publisher": "Academic Press Observability"
+      },
+      {
+        "DOI": "10.1016/j.artint.2025.104211",
+        "title": [
+          "LLM-as-a-Judge Evaluation Protocols for Data Quality Assessment"
+        ],
+        "abstract": "<jats:p>Using structured LLM outputs to grade answer correctness before and after data pipeline remediation.</jats:p>",
+        "author": [
+          {
+            "given": "Vu",
+            "family": "Huy Hoang"
+          },
+          {
+            "given": "Nguyen",
+            "family": "Phong"
+          }
+        ],
+        "subject": [
+          "Data Observability",
+          "RAG Pipeline"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              15
+            ]
+          ]
+        },
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.artint.2025.104211",
+        "publisher": "Academic Press Observability"
+      },
+      {
+        "DOI": "10.1016/j.artint.2025.104212",
+        "title": [
+          "End-to-End Lineage Tracking for Scholarly Vector Observability"
+        ],
+        "abstract": "<jats:p>Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics.</jats:p>",
+        "author": [
+          {
+            "given": "Vu",
+            "family": "Huy Hoang"
+          },
+          {
+            "given": "Nguyen",
+            "family": "Phong"
+          }
+        ],
+        "subject": [
+          "Data Observability",
+          "RAG Pipeline"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              16
+            ]
+          ]
+        },
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              20
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.artint.2025.104212",
+        "publisher": "Academic Press Observability"
+      }
+    ]
+  }
+}

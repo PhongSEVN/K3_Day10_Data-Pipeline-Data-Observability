@@ -1,0 +1,200 @@
+{
+  "backend": "chroma",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "persist_path": "C:\\Lab10\\K3_Day10_Data-Pipeline-Data-Observability\\data\\chroma",
+  "collection_name": "papers-corrupted",
+  "documents": [
+    {
+      "record_id": "10.1016/j.artint.2025.104208::0",
+      "paper_id": "10.1016/j.artint.2025.104208",
+      "title": "Impact of Title Truncation on Dense Vector Retrieval Precision",
+      "content": "Title: Impact of Title Truncation on Dense Vector Retrieval Precision\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-22\nSummary: ",
+      "metadata": {
+        "paper_id": "10.1016/j.artint.2025.104208",
+        "title": "Impact of Title Truncation on Dense Vector Retrieval Precision",
+        "published": "2026-07-22",
+        "authors_joined": "Vu Huy Hoang, Nguyen Phong",
+        "categories_joined": "Data Observability, RAG Pipeline",
+        "summary": "",
+        "abs_url": "https://doi.org/10.1016/j.artint.2025.104208",
+        "pdf_url": ""
+      }
+    },
+    {
+      "record_id": "10.1016/j.artint.2025.104207::1",
+      "paper_id": "10.1016/j.artint.2025.104207",
+      "title": "Benchmark Dataset for RAG Data Observability Evaluation",
+      "content": "Title: Benchmark Dataset for RAG Data Observability Evaluation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-21\nSummary: ",
+      "metadata": {
+        "paper_id": "10.1016/j.artint.2025.104207",
+        "title": "Benchmark Dataset for RAG Data Observability Evaluation",
+        "published": "2026-07-21",
+        "authors_joined": "Vu Huy Hoang, Nguyen Phong",
+        "categories_joined": "Data Observability, RAG Pipeline",
+        "summary": "",
+        "abs_url": "https://doi.org/10.1016/j.artint.2025.104207",
+        "pdf_url": ""
+      }
+    },
+    {
+      "record_id": "10.1016/j.artint.2025.104206::2",
+      "paper_id": "10.1016/j.artint.2025.104206",
+      "title": "Crossref Metadata Ingestion and Parsing for Academic Search Agents",
+      "content": "Title: Crossref Metadata Ingestion and Parsing for Academic Search Agents\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-20\nSummary:  [CORRUPTED_NOISE_xyz123_invalid_garbled_data_stream]  Standardizing Crossref REST AP  [CORRUPTED_NOISE_xyz123_invalid_garbled_data_stream] ",
+      "metadata": {
+        "paper_id": "10.1016/j.artint.2025.104206",
+        "title": "Crossref Metadata Ingestion and Parsing for Academic Search Agents",
+        "published": "2026-07-20",
+        "authors_joined": "Vu Huy Hoang, Nguyen Phong",
+        "categories_joined": "Data Observability, RAG Pipeline",
+        "summary": " [CORRUPTED_NOISE_xyz123_invalid_garbled_data_stream]  Standardizing Crossref REST AP  [CORRUPTED_NOISE_xyz123_invalid_garbled_data_stream] ",
+        "abs_url": "https://doi.org/10.1016/j.artint.2025.104206",
+        "pdf_url": ""
+      }
+    },
+    {
+      "record_id": "10.1016/j.artint.2025.104205::3",
+      "paper_id": "10.1016/j.artint.2025.104205",
+      "title": "Automated Recovery of Corrupted Embeddings in Vector Stores",
+      "content": "Title: Automated Recovery of Corrupted Embeddings in Vector Stores\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-19\nSummary:  [CORRUPTED_NOISE_xyz123_invalid_garbled_data_stream]  Methods for re-indexing raw me  [CORRUPTED_NOISE_xyz123_invalid_garbled_data_stream] ",
+      "metadata": {
+        "paper_id": "10.1016/j.artint.2025.104205",
+        "title": "Automated Recovery of Corrupted Embeddings in Vector Stores",
+        "published": "2026-07-19",
+        "authors_joined": "Vu Huy Hoang, Nguyen Phong",
+        "categories_joined": "Data Observability, RAG Pipeline",
+        "summary": " [CORRUPTED_NOISE_xyz123_invalid_garbled_data_stream]  Methods for re-indexing raw me  [CORRUPTED_NOISE_xyz123_invalid_garbled_data_stream] ",
+        "abs_url": "https://doi.org/10.1016/j.artint.2025.104205",
+        "pdf_url": ""
+      }
+    },
+    {
+      "record_id": "10.1016/j.artint.2025.104204::4",
+      "paper_id": "10.1016/j.artint.2025.104204",
+      "title": "Data ",
+      "content": "Title: Data \nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-18\nSummary: A comprehensive study on completeness, uniqueness, and text length metrics in production RAG data pipelines.",
+      "metadata": {
+        "paper_id": "10.1016/j.artint.2025.104204",
+        "title": "Data ",
+        "published": "2026-07-18",
+        "authors_joined": "Vu Huy Hoang, Nguyen Phong",
+        "categories_joined": "Data Observability, RAG Pipeline",
+        "summary": "A comprehensive study on completeness, uniqueness, and text length metrics in production RAG data pipelines.",
+        "abs_url": "https://doi.org/10.1016/j.artint.2025.104204",
+        "pdf_url": ""
+      }
+    },
+    {
+      "record_id": "10.1016/j.artint.2025.104203::5",
+      "paper_id": "10.1016/j.artint.2025.104203",
+      "title": "Fresh",
+      "content": "Title: Fresh\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-17\nSummary: Automated freshness detection tracks publication age and staleness thresholds across Crossref scholarly streams.",
+      "metadata": {
+        "paper_id": "10.1016/j.artint.2025.104203",
+        "title": "Fresh",
+        "published": "2026-07-17",
+        "authors_joined": "Vu Huy Hoang, Nguyen Phong",
+        "categories_joined": "Data Observability, RAG Pipeline",
+        "summary": "Automated freshness detection tracks publication age and staleness thresholds across Crossref scholarly streams.",
+        "abs_url": "https://doi.org/10.1016/j.artint.2025.104203",
+        "pdf_url": ""
+      }
+    },
+    {
+      "record_id": "10.1016/j.artint.2025.104202::6",
+      "paper_id": "10.1016/j.artint.2025.104202",
+      "title": "Evaluating Vector Index Resilience Against Data Corruption",
+      "content": "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2020-01-01\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "metadata": {
+        "paper_id": "10.1016/j.artint.2025.104202",
+        "title": "Evaluating Vector Index Resilience Against Data Corruption",
+        "published": "2020-01-01",
+        "authors_joined": "Vu Huy Hoang, Nguyen Phong",
+        "categories_joined": "Data Observability, RAG Pipeline",
+        "summary": "We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+        "abs_url": "https://doi.org/10.1016/j.artint.2025.104202",
+        "pdf_url": ""
+      }
+    },
+    {
+      "record_id": "10.1016/j.artint.2025.104212::7",
+      "paper_id": "10.1016/j.artint.2025.104212",
+      "title": "End-to-End Lineage Tracking for Scholarly Vector Observability",
+      "content": "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2020-01-01\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics.",
+      "metadata": {
+        "paper_id": "10.1016/j.artint.2025.104212",
+        "title": "End-to-End Lineage Tracking for Scholarly Vector Observability",
+        "published": "2020-01-01",
+        "authors_joined": "Vu Huy Hoang, Nguyen Phong",
+        "categories_joined": "Data Observability, RAG Pipeline",
+        "summary": "Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics.",
+        "abs_url": "https://doi.org/10.1016/j.artint.2025.104212",
+        "pdf_url": ""
+      }
+    },
+    {
+      "record_id": "10.1016/j.artint.2025.104201::8",
+      "paper_id": "10.1016/j.artint.2025.104201",
+      "title": "Agentic RAG for Data Observability and Pipeline Healing",
+      "content": "Title: Agentic RAG for Data Observability and Pipeline Healing\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-15\nSummary: This paper presents an agentic RAG framework designed to monitor data quality and execute automated data pipeline repair.",
+      "metadata": {
+        "paper_id": "10.1016/j.artint.2025.104201",
+        "title": "Agentic RAG for Data Observability and Pipeline Healing",
+        "published": "2026-07-15",
+        "authors_joined": "Vu Huy Hoang, Nguyen Phong",
+        "categories_joined": "Data Observability, RAG Pipeline",
+        "summary": "This paper presents an agentic RAG framework designed to monitor data quality and execute automated data pipeline repair.",
+        "abs_url": "https://doi.org/10.1016/j.artint.2025.104201",
+        "pdf_url": ""
+      }
+    },
+    {
+      "record_id": "10.1016/j.artint.2025.104211::9",
+      "paper_id": "10.1016/j.artint.2025.104211",
+      "title": "LLM-as-a-Judge Evaluation Protocols for Data Quality Assessment",
+      "content": "Title: LLM-as-a-Judge Evaluation Protocols for Data Quality Assessment\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-15\nSummary: Using structured LLM outputs to grade answer correctness before and after data pipeline remediation.",
+      "metadata": {
+        "paper_id": "10.1016/j.artint.2025.104211",
+        "title": "LLM-as-a-Judge Evaluation Protocols for Data Quality Assessment",
+        "published": "2026-07-15",
+        "authors_joined": "Vu Huy Hoang, Nguyen Phong",
+        "categories_joined": "Data Observability, RAG Pipeline",
+        "summary": "Using structured LLM outputs to grade answer correctness before and after data pipeline remediation.",
+        "abs_url": "https://doi.org/10.1016/j.artint.2025.104211",
+        "pdf_url": ""
+      }
+    },
+    {
+      "record_id": "10.1016/j.artint.2025.104208::10",
+      "paper_id": "10.1016/j.artint.2025.104208",
+      "title": "Impact of Title Truncation on Dense Vector Retrieval Precision",
+      "content": "Title: Impact of Title Truncation on Dense Vector Retrieval Precision\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-22\nSummary: ",
+      "metadata": {
+        "paper_id": "10.1016/j.artint.2025.104208",
+        "title": "Impact of Title Truncation on Dense Vector Retrieval Precision",
+        "published": "2026-07-22",
+        "authors_joined": "Vu Huy Hoang, Nguyen Phong",
+        "categories_joined": "Data Observability, RAG Pipeline",
+        "summary": "",
+        "abs_url": "https://doi.org/10.1016/j.artint.2025.104208",
+        "pdf_url": ""
+      }
+    },
+    {
+      "record_id": "10.1016/j.artint.2025.104207::11",
+      "paper_id": "10.1016/j.artint.2025.104207",
+      "title": "Benchmark Dataset for RAG Data Observability Evaluation",
+      "content": "Title: Benchmark Dataset for RAG Data Observability Evaluation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-21\nSummary: ",
+      "metadata": {
+        "paper_id": "10.1016/j.artint.2025.104207",
+        "title": "Benchmark Dataset for RAG Data Observability Evaluation",
+        "published": "2026-07-21",
+        "authors_joined": "Vu Huy Hoang, Nguyen Phong",
+        "categories_joined": "Data Observability, RAG Pipeline",
+        "summary": "",
+        "abs_url": "https://doi.org/10.1016/j.artint.2025.104207",
+        "pdf_url": ""
+      }
+    }
+  ]
+}

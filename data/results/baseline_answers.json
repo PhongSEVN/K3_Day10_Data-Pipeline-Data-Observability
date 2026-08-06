@@ -1,0 +1,698 @@
+[
+  {
+    "id": "q_10.1016/j.artint.2025.104210_summary",
+    "question_type": "summary",
+    "question": "What is the main finding or abstract of the paper 'Deduplication Strategies for Noise-Resilient Vector Databases'?",
+    "ground_truth": "Preventing duplicated records from dominating Top-K search results in ChromaDB collections.",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104210"
+    ],
+    "answer": "Preventing duplicated records from dominating Top-K search results in ChromaDB collections.",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104210",
+      "10.1016/j.artint.2025.104202",
+      "10.1016/j.artint.2025.104205",
+      "10.1016/j.artint.2025.104207"
+    ],
+    "retrieved_contexts": [
+      "Title: Deduplication Strategies for Noise-Resilient Vector Databases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-24\nSummary: Preventing duplicated records from dominating Top-K search results in ChromaDB collections.",
+      "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "Title: Automated Recovery of Corrupted Embeddings in Vector Stores\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-19\nSummary: Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.",
+      "Title: Benchmark Dataset for RAG Data Observability Evaluation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-21\nSummary: A synthetic evaluation suite with ground truth document IDs to measure token F1 and judge accuracy under noise."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104210_authors",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Deduplication Strategies for Noise-Resilient Vector Databases'?",
+    "ground_truth": "Vu Huy Hoang, Nguyen Phong",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104210"
+    ],
+    "answer": "Vu Huy Hoang, Nguyen Phong",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104210",
+      "10.1016/j.artint.2025.104202",
+      "10.1016/j.artint.2025.104205",
+      "10.1016/j.artint.2025.104209"
+    ],
+    "retrieved_contexts": [
+      "Title: Deduplication Strategies for Noise-Resilient Vector Databases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-24\nSummary: Preventing duplicated records from dominating Top-K search results in ChromaDB collections.",
+      "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "Title: Automated Recovery of Corrupted Embeddings in Vector Stores\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-19\nSummary: Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.",
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104210_date",
+    "question_type": "date",
+    "question": "When was the paper 'Deduplication Strategies for Noise-Resilient Vector Databases' published?",
+    "ground_truth": "2026-07-24",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104210"
+    ],
+    "answer": "2026-07-24",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104210",
+      "10.1016/j.artint.2025.104202",
+      "10.1016/j.artint.2025.104205",
+      "10.1016/j.artint.2025.104209"
+    ],
+    "retrieved_contexts": [
+      "Title: Deduplication Strategies for Noise-Resilient Vector Databases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-24\nSummary: Preventing duplicated records from dominating Top-K search results in ChromaDB collections.",
+      "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "Title: Automated Recovery of Corrupted Embeddings in Vector Stores\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-19\nSummary: Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.",
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104210_categories",
+    "question_type": "categories",
+    "question": "What categories belong to the paper 'Deduplication Strategies for Noise-Resilient Vector Databases'?",
+    "ground_truth": "Data Observability, RAG Pipeline",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104210"
+    ],
+    "answer": "Data Observability, RAG Pipeline",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104210",
+      "10.1016/j.artint.2025.104202",
+      "10.1016/j.artint.2025.104205",
+      "10.1016/j.artint.2025.104212"
+    ],
+    "retrieved_contexts": [
+      "Title: Deduplication Strategies for Noise-Resilient Vector Databases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-24\nSummary: Preventing duplicated records from dominating Top-K search results in ChromaDB collections.",
+      "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "Title: Automated Recovery of Corrupted Embeddings in Vector Stores\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-19\nSummary: Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104209_summary",
+    "question_type": "summary",
+    "question": "What is the main finding or abstract of the paper 'Stale Document Filtering and Real-Time Data Pipeline Remediation'?",
+    "ground_truth": "Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses.",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104209"
+    ],
+    "answer": "Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses.",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104209",
+      "10.1016/j.artint.2025.104203",
+      "10.1016/j.artint.2025.104201",
+      "10.1016/j.artint.2025.104205"
+    ],
+    "retrieved_contexts": [
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses.",
+      "Title: Freshness Monitoring in Continuous Knowledge Base Ingestion\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-17\nSummary: Automated freshness detection tracks publication age and staleness thresholds across Crossref scholarly streams.",
+      "Title: Agentic RAG for Data Observability and Pipeline Healing\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-15\nSummary: This paper presents an agentic RAG framework designed to monitor data quality and execute automated data pipeline repair.",
+      "Title: Automated Recovery of Corrupted Embeddings in Vector Stores\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-19\nSummary: Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104209_authors",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Stale Document Filtering and Real-Time Data Pipeline Remediation'?",
+    "ground_truth": "Vu Huy Hoang, Nguyen Phong",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104209"
+    ],
+    "answer": "Vu Huy Hoang, Nguyen Phong",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104209",
+      "10.1016/j.artint.2025.104201",
+      "10.1016/j.artint.2025.104203",
+      "10.1016/j.artint.2025.104211"
+    ],
+    "retrieved_contexts": [
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses.",
+      "Title: Agentic RAG for Data Observability and Pipeline Healing\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-15\nSummary: This paper presents an agentic RAG framework designed to monitor data quality and execute automated data pipeline repair.",
+      "Title: Freshness Monitoring in Continuous Knowledge Base Ingestion\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-17\nSummary: Automated freshness detection tracks publication age and staleness thresholds across Crossref scholarly streams.",
+      "Title: LLM-as-a-Judge Evaluation Protocols for Data Quality Assessment\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-15\nSummary: Using structured LLM outputs to grade answer correctness before and after data pipeline remediation."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104209_date",
+    "question_type": "date",
+    "question": "When was the paper 'Stale Document Filtering and Real-Time Data Pipeline Remediation' published?",
+    "ground_truth": "2026-07-23",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104209"
+    ],
+    "answer": "2026-07-23",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104209",
+      "10.1016/j.artint.2025.104203",
+      "10.1016/j.artint.2025.104201",
+      "10.1016/j.artint.2025.104211"
+    ],
+    "retrieved_contexts": [
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses.",
+      "Title: Freshness Monitoring in Continuous Knowledge Base Ingestion\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-17\nSummary: Automated freshness detection tracks publication age and staleness thresholds across Crossref scholarly streams.",
+      "Title: Agentic RAG for Data Observability and Pipeline Healing\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-15\nSummary: This paper presents an agentic RAG framework designed to monitor data quality and execute automated data pipeline repair.",
+      "Title: LLM-as-a-Judge Evaluation Protocols for Data Quality Assessment\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-15\nSummary: Using structured LLM outputs to grade answer correctness before and after data pipeline remediation."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104209_categories",
+    "question_type": "categories",
+    "question": "What categories belong to the paper 'Stale Document Filtering and Real-Time Data Pipeline Remediation'?",
+    "ground_truth": "Data Observability, RAG Pipeline",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104209"
+    ],
+    "answer": "Data Observability, RAG Pipeline",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104209",
+      "10.1016/j.artint.2025.104201",
+      "10.1016/j.artint.2025.104203",
+      "10.1016/j.artint.2025.104205"
+    ],
+    "retrieved_contexts": [
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses.",
+      "Title: Agentic RAG for Data Observability and Pipeline Healing\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-15\nSummary: This paper presents an agentic RAG framework designed to monitor data quality and execute automated data pipeline repair.",
+      "Title: Freshness Monitoring in Continuous Knowledge Base Ingestion\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-17\nSummary: Automated freshness detection tracks publication age and staleness thresholds across Crossref scholarly streams.",
+      "Title: Automated Recovery of Corrupted Embeddings in Vector Stores\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-19\nSummary: Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104208_summary",
+    "question_type": "summary",
+    "question": "What is the main finding or abstract of the paper 'Impact of Title Truncation on Dense Vector Retrieval Precision'?",
+    "ground_truth": "Analyzing how truncated paper titles distort MiniLM sentence embeddings and degrade RAG answer quality.",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104208"
+    ],
+    "answer": "Analyzing how truncated paper titles distort MiniLM sentence embeddings and degrade RAG answer quality.",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104208",
+      "10.1016/j.artint.2025.104202",
+      "10.1016/j.artint.2025.104209",
+      "10.1016/j.artint.2025.104212"
+    ],
+    "retrieved_contexts": [
+      "Title: Impact of Title Truncation on Dense Vector Retrieval Precision\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-22\nSummary: Analyzing how truncated paper titles distort MiniLM sentence embeddings and degrade RAG answer quality.",
+      "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104208_authors",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Impact of Title Truncation on Dense Vector Retrieval Precision'?",
+    "ground_truth": "Vu Huy Hoang, Nguyen Phong",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104208"
+    ],
+    "answer": "Vu Huy Hoang, Nguyen Phong",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104208",
+      "10.1016/j.artint.2025.104202",
+      "10.1016/j.artint.2025.104209",
+      "10.1016/j.artint.2025.104212"
+    ],
+    "retrieved_contexts": [
+      "Title: Impact of Title Truncation on Dense Vector Retrieval Precision\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-22\nSummary: Analyzing how truncated paper titles distort MiniLM sentence embeddings and degrade RAG answer quality.",
+      "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104208_date",
+    "question_type": "date",
+    "question": "When was the paper 'Impact of Title Truncation on Dense Vector Retrieval Precision' published?",
+    "ground_truth": "2026-07-22",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104208"
+    ],
+    "answer": "2026-07-22",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104208",
+      "10.1016/j.artint.2025.104202",
+      "10.1016/j.artint.2025.104209",
+      "10.1016/j.artint.2025.104212"
+    ],
+    "retrieved_contexts": [
+      "Title: Impact of Title Truncation on Dense Vector Retrieval Precision\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-22\nSummary: Analyzing how truncated paper titles distort MiniLM sentence embeddings and degrade RAG answer quality.",
+      "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104208_categories",
+    "question_type": "categories",
+    "question": "What categories belong to the paper 'Impact of Title Truncation on Dense Vector Retrieval Precision'?",
+    "ground_truth": "Data Observability, RAG Pipeline",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104208"
+    ],
+    "answer": "Data Observability, RAG Pipeline",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104208",
+      "10.1016/j.artint.2025.104202",
+      "10.1016/j.artint.2025.104212",
+      "10.1016/j.artint.2025.104206"
+    ],
+    "retrieved_contexts": [
+      "Title: Impact of Title Truncation on Dense Vector Retrieval Precision\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-22\nSummary: Analyzing how truncated paper titles distort MiniLM sentence embeddings and degrade RAG answer quality.",
+      "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics.",
+      "Title: Crossref Metadata Ingestion and Parsing for Academic Search Agents\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-20\nSummary: Standardizing Crossref REST API payloads into tabular clean schemas for vector embedding generation."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104207_summary",
+    "question_type": "summary",
+    "question": "What is the main finding or abstract of the paper 'Benchmark Dataset for RAG Data Observability Evaluation'?",
+    "ground_truth": "A synthetic evaluation suite with ground truth document IDs to measure token F1 and judge accuracy under noise.",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104207"
+    ],
+    "answer": "A synthetic evaluation suite with ground truth document IDs to measure token F1 and judge accuracy under noise.",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104207",
+      "10.1016/j.artint.2025.104204",
+      "10.1016/j.artint.2025.104201",
+      "10.1016/j.artint.2025.104212"
+    ],
+    "retrieved_contexts": [
+      "Title: Benchmark Dataset for RAG Data Observability Evaluation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-21\nSummary: A synthetic evaluation suite with ground truth document IDs to measure token F1 and judge accuracy under noise.",
+      "Title: Data Quality Metrics and Assertions for RAG Knowledge Bases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-18\nSummary: A comprehensive study on completeness, uniqueness, and text length metrics in production RAG data pipelines.",
+      "Title: Agentic RAG for Data Observability and Pipeline Healing\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-15\nSummary: This paper presents an agentic RAG framework designed to monitor data quality and execute automated data pipeline repair.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104207_authors",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Benchmark Dataset for RAG Data Observability Evaluation'?",
+    "ground_truth": "Vu Huy Hoang, Nguyen Phong",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104207"
+    ],
+    "answer": "Vu Huy Hoang, Nguyen Phong",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104207",
+      "10.1016/j.artint.2025.104204",
+      "10.1016/j.artint.2025.104201",
+      "10.1016/j.artint.2025.104212"
+    ],
+    "retrieved_contexts": [
+      "Title: Benchmark Dataset for RAG Data Observability Evaluation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-21\nSummary: A synthetic evaluation suite with ground truth document IDs to measure token F1 and judge accuracy under noise.",
+      "Title: Data Quality Metrics and Assertions for RAG Knowledge Bases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-18\nSummary: A comprehensive study on completeness, uniqueness, and text length metrics in production RAG data pipelines.",
+      "Title: Agentic RAG for Data Observability and Pipeline Healing\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-15\nSummary: This paper presents an agentic RAG framework designed to monitor data quality and execute automated data pipeline repair.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104207_date",
+    "question_type": "date",
+    "question": "When was the paper 'Benchmark Dataset for RAG Data Observability Evaluation' published?",
+    "ground_truth": "2026-07-21",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104207"
+    ],
+    "answer": "2026-07-21",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104207",
+      "10.1016/j.artint.2025.104204",
+      "10.1016/j.artint.2025.104201",
+      "10.1016/j.artint.2025.104212"
+    ],
+    "retrieved_contexts": [
+      "Title: Benchmark Dataset for RAG Data Observability Evaluation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-21\nSummary: A synthetic evaluation suite with ground truth document IDs to measure token F1 and judge accuracy under noise.",
+      "Title: Data Quality Metrics and Assertions for RAG Knowledge Bases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-18\nSummary: A comprehensive study on completeness, uniqueness, and text length metrics in production RAG data pipelines.",
+      "Title: Agentic RAG for Data Observability and Pipeline Healing\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-15\nSummary: This paper presents an agentic RAG framework designed to monitor data quality and execute automated data pipeline repair.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104207_categories",
+    "question_type": "categories",
+    "question": "What categories belong to the paper 'Benchmark Dataset for RAG Data Observability Evaluation'?",
+    "ground_truth": "Data Observability, RAG Pipeline",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104207"
+    ],
+    "answer": "Data Observability, RAG Pipeline",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104207",
+      "10.1016/j.artint.2025.104204",
+      "10.1016/j.artint.2025.104201",
+      "10.1016/j.artint.2025.104212"
+    ],
+    "retrieved_contexts": [
+      "Title: Benchmark Dataset for RAG Data Observability Evaluation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-21\nSummary: A synthetic evaluation suite with ground truth document IDs to measure token F1 and judge accuracy under noise.",
+      "Title: Data Quality Metrics and Assertions for RAG Knowledge Bases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-18\nSummary: A comprehensive study on completeness, uniqueness, and text length metrics in production RAG data pipelines.",
+      "Title: Agentic RAG for Data Observability and Pipeline Healing\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-15\nSummary: This paper presents an agentic RAG framework designed to monitor data quality and execute automated data pipeline repair.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104206_summary",
+    "question_type": "summary",
+    "question": "What is the main finding or abstract of the paper 'Crossref Metadata Ingestion and Parsing for Academic Search Agents'?",
+    "ground_truth": "Standardizing Crossref REST API payloads into tabular clean schemas for vector embedding generation.",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104206"
+    ],
+    "answer": "Standardizing Crossref REST API payloads into tabular clean schemas for vector embedding generation.",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104206",
+      "10.1016/j.artint.2025.104212",
+      "10.1016/j.artint.2025.104203",
+      "10.1016/j.artint.2025.104209"
+    ],
+    "retrieved_contexts": [
+      "Title: Crossref Metadata Ingestion and Parsing for Academic Search Agents\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-20\nSummary: Standardizing Crossref REST API payloads into tabular clean schemas for vector embedding generation.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics.",
+      "Title: Freshness Monitoring in Continuous Knowledge Base Ingestion\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-17\nSummary: Automated freshness detection tracks publication age and staleness thresholds across Crossref scholarly streams.",
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104206_authors",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Crossref Metadata Ingestion and Parsing for Academic Search Agents'?",
+    "ground_truth": "Vu Huy Hoang, Nguyen Phong",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104206"
+    ],
+    "answer": "Vu Huy Hoang, Nguyen Phong",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104206",
+      "10.1016/j.artint.2025.104212",
+      "10.1016/j.artint.2025.104203",
+      "10.1016/j.artint.2025.104209"
+    ],
+    "retrieved_contexts": [
+      "Title: Crossref Metadata Ingestion and Parsing for Academic Search Agents\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-20\nSummary: Standardizing Crossref REST API payloads into tabular clean schemas for vector embedding generation.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics.",
+      "Title: Freshness Monitoring in Continuous Knowledge Base Ingestion\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-17\nSummary: Automated freshness detection tracks publication age and staleness thresholds across Crossref scholarly streams.",
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104206_date",
+    "question_type": "date",
+    "question": "When was the paper 'Crossref Metadata Ingestion and Parsing for Academic Search Agents' published?",
+    "ground_truth": "2026-07-20",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104206"
+    ],
+    "answer": "2026-07-20",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104206",
+      "10.1016/j.artint.2025.104212",
+      "10.1016/j.artint.2025.104203",
+      "10.1016/j.artint.2025.104209"
+    ],
+    "retrieved_contexts": [
+      "Title: Crossref Metadata Ingestion and Parsing for Academic Search Agents\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-20\nSummary: Standardizing Crossref REST API payloads into tabular clean schemas for vector embedding generation.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics.",
+      "Title: Freshness Monitoring in Continuous Knowledge Base Ingestion\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-17\nSummary: Automated freshness detection tracks publication age and staleness thresholds across Crossref scholarly streams.",
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104206_categories",
+    "question_type": "categories",
+    "question": "What categories belong to the paper 'Crossref Metadata Ingestion and Parsing for Academic Search Agents'?",
+    "ground_truth": "Data Observability, RAG Pipeline",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104206"
+    ],
+    "answer": "Data Observability, RAG Pipeline",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104206",
+      "10.1016/j.artint.2025.104212",
+      "10.1016/j.artint.2025.104203",
+      "10.1016/j.artint.2025.104208"
+    ],
+    "retrieved_contexts": [
+      "Title: Crossref Metadata Ingestion and Parsing for Academic Search Agents\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-20\nSummary: Standardizing Crossref REST API payloads into tabular clean schemas for vector embedding generation.",
+      "Title: End-to-End Lineage Tracking for Scholarly Vector Observability\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: Tracking raw records from Crossref landing to embedding manifests and evaluation report metrics.",
+      "Title: Freshness Monitoring in Continuous Knowledge Base Ingestion\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-17\nSummary: Automated freshness detection tracks publication age and staleness thresholds across Crossref scholarly streams.",
+      "Title: Impact of Title Truncation on Dense Vector Retrieval Precision\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-22\nSummary: Analyzing how truncated paper titles distort MiniLM sentence embeddings and degrade RAG answer quality."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104205_summary",
+    "question_type": "summary",
+    "question": "What is the main finding or abstract of the paper 'Automated Recovery of Corrupted Embeddings in Vector Stores'?",
+    "ground_truth": "Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104205"
+    ],
+    "answer": "Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104205",
+      "10.1016/j.artint.2025.104210",
+      "10.1016/j.artint.2025.104202",
+      "10.1016/j.artint.2025.104209"
+    ],
+    "retrieved_contexts": [
+      "Title: Automated Recovery of Corrupted Embeddings in Vector Stores\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-19\nSummary: Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.",
+      "Title: Deduplication Strategies for Noise-Resilient Vector Databases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-24\nSummary: Preventing duplicated records from dominating Top-K search results in ChromaDB collections.",
+      "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104205_authors",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Automated Recovery of Corrupted Embeddings in Vector Stores'?",
+    "ground_truth": "Vu Huy Hoang, Nguyen Phong",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104205"
+    ],
+    "answer": "Vu Huy Hoang, Nguyen Phong",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104205",
+      "10.1016/j.artint.2025.104210",
+      "10.1016/j.artint.2025.104202",
+      "10.1016/j.artint.2025.104209"
+    ],
+    "retrieved_contexts": [
+      "Title: Automated Recovery of Corrupted Embeddings in Vector Stores\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-19\nSummary: Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.",
+      "Title: Deduplication Strategies for Noise-Resilient Vector Databases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-24\nSummary: Preventing duplicated records from dominating Top-K search results in ChromaDB collections.",
+      "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104205_date",
+    "question_type": "date",
+    "question": "When was the paper 'Automated Recovery of Corrupted Embeddings in Vector Stores' published?",
+    "ground_truth": "2026-07-19",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104205"
+    ],
+    "answer": "2026-07-19",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104205",
+      "10.1016/j.artint.2025.104202",
+      "10.1016/j.artint.2025.104210",
+      "10.1016/j.artint.2025.104209"
+    ],
+    "retrieved_contexts": [
+      "Title: Automated Recovery of Corrupted Embeddings in Vector Stores\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-19\nSummary: Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.",
+      "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "Title: Deduplication Strategies for Noise-Resilient Vector Databases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-24\nSummary: Preventing duplicated records from dominating Top-K search results in ChromaDB collections.",
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104205_categories",
+    "question_type": "categories",
+    "question": "What categories belong to the paper 'Automated Recovery of Corrupted Embeddings in Vector Stores'?",
+    "ground_truth": "Data Observability, RAG Pipeline",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104205"
+    ],
+    "answer": "Data Observability, RAG Pipeline",
+    "retrieved_doc_ids": [
+      "10.1016/j.artint.2025.104205",
+      "10.1016/j.artint.2025.104202",
+      "10.1016/j.artint.2025.104210",
+      "10.1016/j.artint.2025.104209"
+    ],
+    "retrieved_contexts": [
+      "Title: Automated Recovery of Corrupted Embeddings in Vector Stores\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-19\nSummary: Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.",
+      "Title: Evaluating Vector Index Resilience Against Data Corruption\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-16\nSummary: We evaluate how data corruptions such as title truncation, missing summaries, and noise impact semantic retrieval and LLM response accuracy.",
+      "Title: Deduplication Strategies for Noise-Resilient Vector Databases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-24\nSummary: Preventing duplicated records from dominating Top-K search results in ChromaDB collections.",
+      "Title: Stale Document Filtering and Real-Time Data Pipeline Remediation\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-23\nSummary: Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses."
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  }
+]

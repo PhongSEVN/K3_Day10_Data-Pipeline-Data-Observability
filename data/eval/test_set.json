@@ -1,0 +1,218 @@
+[
+  {
+    "id": "q_10.1016/j.artint.2025.104210_summary",
+    "question_type": "summary",
+    "question": "What is the main finding or abstract of the paper 'Deduplication Strategies for Noise-Resilient Vector Databases'?",
+    "ground_truth": "Preventing duplicated records from dominating Top-K search results in ChromaDB collections.",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104210"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104210_authors",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Deduplication Strategies for Noise-Resilient Vector Databases'?",
+    "ground_truth": "Vu Huy Hoang, Nguyen Phong",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104210"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104210_date",
+    "question_type": "date",
+    "question": "When was the paper 'Deduplication Strategies for Noise-Resilient Vector Databases' published?",
+    "ground_truth": "2026-07-24",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104210"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104210_categories",
+    "question_type": "categories",
+    "question": "What categories belong to the paper 'Deduplication Strategies for Noise-Resilient Vector Databases'?",
+    "ground_truth": "Data Observability, RAG Pipeline",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104210"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104209_summary",
+    "question_type": "summary",
+    "question": "What is the main finding or abstract of the paper 'Stale Document Filtering and Real-Time Data Pipeline Remediation'?",
+    "ground_truth": "Demonstrating how outdated publications affect retrieval freshness signals and automated trigger responses.",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104209"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104209_authors",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Stale Document Filtering and Real-Time Data Pipeline Remediation'?",
+    "ground_truth": "Vu Huy Hoang, Nguyen Phong",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104209"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104209_date",
+    "question_type": "date",
+    "question": "When was the paper 'Stale Document Filtering and Real-Time Data Pipeline Remediation' published?",
+    "ground_truth": "2026-07-23",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104209"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104209_categories",
+    "question_type": "categories",
+    "question": "What categories belong to the paper 'Stale Document Filtering and Real-Time Data Pipeline Remediation'?",
+    "ground_truth": "Data Observability, RAG Pipeline",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104209"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104208_summary",
+    "question_type": "summary",
+    "question": "What is the main finding or abstract of the paper 'Impact of Title Truncation on Dense Vector Retrieval Precision'?",
+    "ground_truth": "Analyzing how truncated paper titles distort MiniLM sentence embeddings and degrade RAG answer quality.",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104208"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104208_authors",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Impact of Title Truncation on Dense Vector Retrieval Precision'?",
+    "ground_truth": "Vu Huy Hoang, Nguyen Phong",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104208"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104208_date",
+    "question_type": "date",
+    "question": "When was the paper 'Impact of Title Truncation on Dense Vector Retrieval Precision' published?",
+    "ground_truth": "2026-07-22",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104208"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104208_categories",
+    "question_type": "categories",
+    "question": "What categories belong to the paper 'Impact of Title Truncation on Dense Vector Retrieval Precision'?",
+    "ground_truth": "Data Observability, RAG Pipeline",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104208"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104207_summary",
+    "question_type": "summary",
+    "question": "What is the main finding or abstract of the paper 'Benchmark Dataset for RAG Data Observability Evaluation'?",
+    "ground_truth": "A synthetic evaluation suite with ground truth document IDs to measure token F1 and judge accuracy under noise.",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104207"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104207_authors",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Benchmark Dataset for RAG Data Observability Evaluation'?",
+    "ground_truth": "Vu Huy Hoang, Nguyen Phong",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104207"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104207_date",
+    "question_type": "date",
+    "question": "When was the paper 'Benchmark Dataset for RAG Data Observability Evaluation' published?",
+    "ground_truth": "2026-07-21",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104207"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104207_categories",
+    "question_type": "categories",
+    "question": "What categories belong to the paper 'Benchmark Dataset for RAG Data Observability Evaluation'?",
+    "ground_truth": "Data Observability, RAG Pipeline",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104207"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104206_summary",
+    "question_type": "summary",
+    "question": "What is the main finding or abstract of the paper 'Crossref Metadata Ingestion and Parsing for Academic Search Agents'?",
+    "ground_truth": "Standardizing Crossref REST API payloads into tabular clean schemas for vector embedding generation.",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104206"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104206_authors",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Crossref Metadata Ingestion and Parsing for Academic Search Agents'?",
+    "ground_truth": "Vu Huy Hoang, Nguyen Phong",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104206"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104206_date",
+    "question_type": "date",
+    "question": "When was the paper 'Crossref Metadata Ingestion and Parsing for Academic Search Agents' published?",
+    "ground_truth": "2026-07-20",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104206"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104206_categories",
+    "question_type": "categories",
+    "question": "What categories belong to the paper 'Crossref Metadata Ingestion and Parsing for Academic Search Agents'?",
+    "ground_truth": "Data Observability, RAG Pipeline",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104206"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104205_summary",
+    "question_type": "summary",
+    "question": "What is the main finding or abstract of the paper 'Automated Recovery of Corrupted Embeddings in Vector Stores'?",
+    "ground_truth": "Methods for re-indexing raw metadata snapshots after pipeline corruption events to restore retrieval recall.",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104205"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104205_authors",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Automated Recovery of Corrupted Embeddings in Vector Stores'?",
+    "ground_truth": "Vu Huy Hoang, Nguyen Phong",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104205"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104205_date",
+    "question_type": "date",
+    "question": "When was the paper 'Automated Recovery of Corrupted Embeddings in Vector Stores' published?",
+    "ground_truth": "2026-07-19",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104205"
+    ]
+  },
+  {
+    "id": "q_10.1016/j.artint.2025.104205_categories",
+    "question_type": "categories",
+    "question": "What categories belong to the paper 'Automated Recovery of Corrupted Embeddings in Vector Stores'?",
+    "ground_truth": "Data Observability, RAG Pipeline",
+    "ground_truth_doc_ids": [
+      "10.1016/j.artint.2025.104205"
+    ]
+  }
+]

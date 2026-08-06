@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What is the main finding or abstract of the paper 'Deduplication Strategies for Noise-Resilient Vector Databases'?",
+    "answer": "[Local Index Retrieval] Title: Deduplication Strategies for Noise-Resilient Vector Databases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-24\nSummary: Preventing duplicated records from dominating Top-K search results in ChromaDB collections."
+  },
+  {
+    "question": "Who authored the paper 'Deduplication Strategies for Noise-Resilient Vector Databases'?",
+    "answer": "[Local Index Retrieval] Title: Deduplication Strategies for Noise-Resilient Vector Databases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-24\nSummary: Preventing duplicated records from dominating Top-K search results in ChromaDB collections."
+  },
+  {
+    "question": "When was the paper 'Deduplication Strategies for Noise-Resilient Vector Databases' published?",
+    "answer": "[Local Index Retrieval] Title: Deduplication Strategies for Noise-Resilient Vector Databases\nAuthors: Vu Huy Hoang, Nguyen Phong\nCategories: Data Observability, RAG Pipeline\nPublished: 2026-07-24\nSummary: Preventing duplicated records from dominating Top-K search results in ChromaDB collections."
+  }
+]
