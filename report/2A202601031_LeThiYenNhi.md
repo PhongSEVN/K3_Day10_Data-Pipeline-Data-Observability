@@ -9,7 +9,7 @@
 | Khóa/Lớp         | K3                         |
 | Tên nhóm         | A3                         |
 | Vai trò chính    | Observability owner        |
-| Repository         | `https://github.com/PhongSEVN/K3_Day10_Data-Pipeline-Data-Observability` |
+| Repository         | `https://github.com/PhongSEVN/DAY10_2A202601241_NguyenVanPhong` |
 | Ngày hoàn thành | 2026-08-06                  |
 
 ## 2. Vai trò và phạm vi công việc
