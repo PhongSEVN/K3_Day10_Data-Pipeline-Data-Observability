@@ -4,15 +4,15 @@
 
 ## 1. Thông tin cá nhân
 
-| Thông tin         | Nội dung                  |
-| ------------------ | -------------------------- |
-| Họ và tên       | Lê Thị Yến Nhi          |
-| MSSV               | 2A202601031                |
-| Khóa/Lớp         | K3                         |
-| Tên nhóm         | A3                         |
-| Vai trò chính    | Observability owner        |
-| Repository         | [Đường dẫn repository] |
-| Ngày hoàn thành | [YYYY-MM-DD]               |
+| Thông tin         | Nội dung                                                                                                             |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| Họ và tên       | Lê Thị Yến Nhi                                                                                                     |
+| MSSV               | 2A202601031                                                                                                           |
+| Khóa/Lớp         | K3                                                                                                                    |
+| Tên nhóm         | A3                                                                                                                    |
+| Vai trò chính    | Observability owner                                                                                                   |
+| Repository         | [github.com/PhongSEVN/DAY10_2A202601241_NguyenVanPhong](https://github.com/PhongSEVN/DAY10_2A202601241_NguyenVanPhong) |
+| Ngày hoàn thành | 2026/08/06                                                                                                            |
 
 ## 2. Vai trò và phạm vi công việc
 

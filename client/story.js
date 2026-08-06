@@ -92,6 +92,7 @@
 
   async function loadImpactSection() {
     const target = document.getElementById("story-metric-bars");
+    if (!target) return;
     try {
       const [baseline, corrupted] = await Promise.all([
         fetchJson("../data/results/baseline_metrics.json"),
@@ -109,6 +110,7 @@
 
   async function loadRepairSection() {
     const target = document.getElementById("story-repair-result");
+    if (!target) return;
     try {
       const [baseline, corrupted, repaired] = await Promise.all([
         fetchJson("../data/results/baseline_metrics.json"),

@@ -477,6 +477,15 @@
   color: var(--text-muted);
 }
 
+.impact-up {
+  color: var(--status-good-text);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .story-repair h2 {
   color: var(--series-repaired);
 }

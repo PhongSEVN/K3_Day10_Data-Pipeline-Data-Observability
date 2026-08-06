@@ -187,10 +187,11 @@
     <section class="story-step story-lab" data-step>
       <span class="step-index">07b</span>
       <h2>Lab: tự chạy mô phỏng, xem tác động ngay</h2>
-      <p>JS bên dưới chạy <strong>đúng 6 bước corruption ở trên</strong>, cùng thứ tự, cùng chỉ số dòng — mirror 1:1
-        <code>src/ingestion/corruption.py</code>. Mỗi lần bấm "Chạy" sẽ <strong>chọn ngẫu nhiên 8 record khác nhau</strong>
-        từ toàn bộ <code>data/clean/papers_clean.json</code> — bấm nhiều lần để thấy corruption tác động lên record
-        khác nhau, không phải kết quả cứng.
+      <p>Mỗi lỗi bên dưới mirror đúng phép biến đổi thật trong <code>src/ingestion/corruption.py</code> (cùng field,
+        cùng hằng số — <code>"2020-01-01"</code>, cắt 5 ký tự, chuỗi noise...). Khác với Python (luôn chạy cố định cả
+        6), mỗi lần bấm "Chạy" ở đây <strong>random chọn tối thiểu 3/6 loại lỗi</strong>, mỗi loại áp lên record thật
+        riêng biệt lấy ngẫu nhiên từ <code>data/clean/papers_clean.json</code> — bấm nhiều lần để thấy kịch bản khác
+        nhau mỗi lần, không phải kết quả cứng.
       </p>
       <div class="lab-controls">
         <button class="btn btn-primary" id="lab-run">Chạy mô phỏng corruption</button>
@@ -203,7 +204,8 @@
       <h3 class="lab-subheading">Tác động lên retrieval — trùng từ (token F1) với câu hỏi thật</h3>
       <p class="story-note">Ước lượng bằng công thức token-F1 giống <code>metrics.py</code> (không phải embedding
         cosine thật) giữa <code>text_for_embedding</code> và <code>ground_truth</code> của câu hỏi thật trong
-        <code>test_set.json</code> liên quan đến record bị corrupt.
+        <code>test_set.json</code> liên quan đến record bị corrupt. Cuộn xuống mục 09 để repair đúng batch này và xem
+        số liệu phục hồi.
       </p>
       <div id="lab-impact" class="lab-impact-list"></div>
     </section>
@@ -217,6 +219,25 @@
       </div>
       <p class="story-note">Quality check cũng FAIL song song — <code>title_not_null</code>, <code>freshness</code> bắt
         được lỗi trước khi user thấy câu trả lời sai.</p>
+    </section>
+
+    <section class="story-step story-repair" data-step>
+      <span class="step-index">09</span>
+      <h2>Repair — quay lại nguồn gốc, không vá tạm</h2>
+      <p>Build lại <code>clean_dataframe</code> từ <code>crossref_records.json</code> gốc — raw source đáng tin cậy —
+        chứ không sửa trên bản đã hỏng. Số bên dưới là kết quả thật từ lần chạy <code>run_corruption_flow.py</code>
+        gần nhất:</p>
+      <div id="story-repair-result" class="story-note">Đang tải…</div>
+
+      <h3 class="lab-subheading">Tự bấm Repair trên batch vừa mô phỏng ở mục 07b</h3>
+      <p class="story-note">Cần bấm "Chạy mô phỏng corruption" ở mục 07b trước — nút này repair đúng batch vừa random
+        ở đó (không tạo batch mới). Repair = lấy lại bản gốc pristine của record, không phải vá field bị hỏng.</p>
+      <div class="lab-controls">
+        <button class="btn btn-secondary" id="lab-repair" disabled>Repair từ nguồn gốc</button>
+      </div>
+      <div id="lab-repair-status" class="story-note">Chưa repair — chạy mô phỏng ở mục 07b trước.</div>
+      <div id="lab-repair-quality" class="lab-quality-grid"></div>
+      <div id="lab-repair-impact" class="lab-impact-list"></div>
     </section>
 
     <section class="story-step story-conclusion" data-step>
