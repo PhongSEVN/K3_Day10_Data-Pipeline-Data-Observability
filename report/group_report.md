@@ -6,10 +6,10 @@
 
 | Thông tin         | Nội dung                  |
 | ------------------ | -------------------------- |
-| Khóa/Lớp         | [K3 hoặc K4]              |
-| Tên nhóm         | [Tên hoặc mã nhóm]     |
+| Khóa/Lớp         | K3                         |
+| Tên nhóm         | A3                         |
 | Repository         | [Đường dẫn repository] |
-| Ngày hoàn thành | [YYYY-MM-DD]               |
+| Ngày hoàn thành | 2026/08/06                 |
 
 ### Thành viên và phân công
 
